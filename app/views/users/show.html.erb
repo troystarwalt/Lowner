@@ -1,0 +1,20 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+<!-- At some point I'll use render'usersshow' -->
+<%= @user.username %>
+<%= @user.first_name %>
+<%= @user.last_name %>
+<%= @user.bio %>
+<%= @user.cell_phone %>
+<div class="clip-wrap">
+<%= image_tag @user.avatar.url(:medium), class: "user_profile_element" %>
+</div>
+
+<svg width="0" height="0">
+  <defs>
+	<clipPath id="clip-shape" clipPathUnits="objectBoundingBox">
+	  <polygon points="0 1, 0 0, 1 0, 0.8 1" />
+	</clipPath>
+  </defs>
+</svg>
+

@@ -9,8 +9,12 @@
 <body>
 <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
+<ul class="hmenu">
+  <%= render 'devise/shared/registration_items' %>
+  <%= render 'devise/shared/login_items' %>
+</ul>
 
 <%= yield %>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </body>
 </html>
