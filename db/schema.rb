@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202024348) do
+ActiveRecord::Schema.define(version: 20151202165810) do
+
+  create_table "item_shares", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "item_shares", ["item_id"], name: "index_item_shares_on_item_id"
+  add_index "item_shares", ["user_id"], name: "index_item_shares_on_user_id"
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -23,7 +33,10 @@ ActiveRecord::Schema.define(version: 20151202024348) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "items", ["user_id"], name: "index_items_on_user_id"
 
   create_table "user_items", force: :cascade do |t|
     t.integer  "user_id"

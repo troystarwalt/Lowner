@@ -1,8 +1,7 @@
 FactoryGirl.define do
-  factory :user_item do
+  factory :item_share do
     user nil
 item nil
-owned false
   end
 
 end
