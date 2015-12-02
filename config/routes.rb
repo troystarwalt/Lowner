@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get '/users' => 'users#index'
 
   get '/profile/:id', to: 'users#show', as: 'profile'

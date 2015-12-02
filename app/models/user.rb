@@ -8,7 +8,5 @@ class User < ActiveRecord::Base
   has_many :user_items, dependent: :destroy
   has_many :items, through: :user_items
 
-  has_many :owned_items, through: :user_items, source: :item, where: -> {
-  	user_items: {owned: true}
-  }
+  has_many :owned_items, -> { where user_items: { owned: true } }, through: :user_items, source: :item
 end
