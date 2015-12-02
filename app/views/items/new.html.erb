@@ -3,6 +3,10 @@
 <%= form_for @item do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
+  <div class="field">
+  <%= f.label 'Upload a photo or image of your item.' %>
+  <%= f.file_field :avatar %>
+  </div>
 <%= f.submit %>
 
 <% end %>

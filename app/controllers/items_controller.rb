@@ -9,17 +9,19 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @user = User.all
   end
 
   def create
-
+    @user = current_user
     if user_signed_in?
+      @item = Item.new(item_params)
       @item.save
-      redirect_to profile_path
+      redirect_to profile_path(@user)
     else
+      flash[:notice] = "You'll need to have an account or login to create an item."
       redirect_to new_user_session_path
     end
-
   end
 
   def edit
