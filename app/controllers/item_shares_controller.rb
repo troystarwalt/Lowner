@@ -1,6 +1,8 @@
 class ItemSharesController < ApplicationController
   def new
-    @new_share = ItemShare.create(user_id: :id, item_id: :id)
+    @user = current_user
+    @item = current_user.items
+    @new_share = ItemShare.new
   end
 
   def edit

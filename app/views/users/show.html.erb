@@ -45,7 +45,7 @@
 			<td><%= item.description %> </td>
 			<td><%= item.category %></td>
 			<td><%= image_tag item.avatar.url ('thumb') %></td>
-			<td><button><%= link_to 'Share', item %></button></td>
+			<td><button><%= link_to 'Share', new_item_share_path(item) %></button></td>
 			<td><button>
 				<%= link_to 'Delete', item, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
 			</button></td>

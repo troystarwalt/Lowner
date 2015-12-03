@@ -1,2 +1,8 @@
 <h1>ItemShares#new</h1>
 <p>Find me in app/views/item_shares/new.html.erb</p>
+<% console %>
+<%= form_for @new_share do |ns| %>
+	<%= ns.label :username %>
+	<%= ns.text_field :username %>
+<%= ns.submit %>
+<% end %>
