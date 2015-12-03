@@ -13,7 +13,7 @@
 <%= @user.bio %>
 <%= @user.cell_phone %>
 <div class="clip-wrap">
-	<%= image_tag @user.avatar.url(:medium), class: "user_profile_element" %>
+	<%= image_tag @user.avatar.url(:small), class: "user_profile_element" %>
 </div>
 
 <svg width="0" height="0">
@@ -49,7 +49,7 @@
 			<td><%= item.description %> </td>
 			<td><%= item.category %></td>
 			<td><%= image_tag item.avatar.url ('thumb') %></td>
-			<td>This will show if it is loaned.</td>
+			<td><%= @user.shared_items.id %></td>
 			<td><button><%= link_to 'Loan', new_item_share_path(item) %></button></td>
 			<td><button>
 				<%= link_to 'Delete', item, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
@@ -60,4 +60,7 @@
 </table>
 <hr>
 <h1>Items I've Borrowed</h1>
-<table></table>
+
+<% if @user.shared_items.empty? %>
+	No Shared Items Found
+<% end %>

@@ -21,10 +21,12 @@
 				<%= u.username %>
 			</td>
 			<td><%= u.created_at %></td>
-			<td><%= image_tag u.avatar.url(:thumb) %></td>
+			<td><%= image_tag u.avatar.url("small") %></td>
 		</tr>
 	</tbody>
 </table>
 
 <% end %>
+
+
 

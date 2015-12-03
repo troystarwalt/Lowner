@@ -13,14 +13,12 @@ class UsersController < ApplicationController
   end
 
   def show
-
     if current_user
       console
     else
       redirect_to root_path
     end
   end
-
 
 
   private

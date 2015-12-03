@@ -6,4 +6,10 @@ class Item < ActiveRecord::Base
 	has_many :item_shares
   	has_many :shared_users, :foreign_key => "shared_item_id", :through => :user, :source => :item_shares
 
+  	after_destroy :log_destroy_action
+
+  	def log_destroy_action
+  		puts "Item Deleted"
+  	end
+
 end

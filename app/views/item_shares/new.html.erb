@@ -1,8 +1,19 @@
 <h1>ItemShares#new</h1>
 <p>Find me in app/views/item_shares/new.html.erb</p>
 <% console %>
+
+<!-- User comes here from their profile after clicking on Loan next to the item they want to loan.
+Ideally, thee Iten.id will follow the path and will be available on the next screen.
+They then need to select a user to share this item with. So that the ItemShare will include the User.id of the other user as well as the current_user's Item.id.
+
+ -->
+
+ <p>Who do you want to share this with?</p>
+
 <%= form_for @new_share do |ns| %>
-	<%= ns.label :username %>
-	<%= ns.text_field :username %>
+	<%= ns.label :user_id%>
+	<%= ns.number_field :user_id %>
+	<%= ns.label :item_id %>
+	<%= ns.number_field :item_id %>
 <%= ns.submit %>
 <% end %>
