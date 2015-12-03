@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   resources :items
 
+  get '/share/:id' => 'items#new_share'
+
+  resources :item_shares, only: [:new, :edit, :update, :destroy, :create]
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

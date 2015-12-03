@@ -9,6 +9,14 @@
 <body>
 <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
+       <div class='nav'>
+       <nav>
+       	<ul>
+       		<li>
+       			<%= link_to 'Create Item to Share', new_item_path %>
+       		</li>
+       	</ul>
+       </nav>
 <ul class="hmenu">
   <%= render 'devise/shared/registration_items' %>
   <%= render 'devise/shared/login_items' %>

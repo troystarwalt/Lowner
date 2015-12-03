@@ -1,20 +1,58 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<!-- At some point I'll use render'usersshow' -->
+<!-- This pages handles multiple functions:
+	- Shows user profile
+	- Alows user to delete and or edit account.
+	- Shows the items the user owns
+	- Shows the items the user has loaned
+	- Shows th eitems the user has borrwed
+ -->
+
+
 <%= @user.username %>
 <%= @user.first_name %>
 <%= @user.last_name %>
 <%= @user.bio %>
 <%= @user.cell_phone %>
 <div class="clip-wrap">
-<%= image_tag @user.avatar.url(:medium), class: "user_profile_element" %>
+	<%= image_tag @user.avatar.url(:medium), class: "user_profile_element" %>
 </div>
 
 <svg width="0" height="0">
-  <defs>
-	<clipPath id="clip-shape" clipPathUnits="objectBoundingBox">
-	  <polygon points="0 1, 0 0, 1 0, 0.8 1" />
-	</clipPath>
-  </defs>
+	<defs>
+		<clipPath id="clip-shape" clipPathUnits="objectBoundingBox">
+			<polygon points="0 1, 0 0, 1 0, 0.8 1" />
+		</clipPath>
+	</defs>
 </svg>
 
+<h1>Owned Items</h1>
+<table>
+	<% @user.items.each do |item| %>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Category</th>
+			<th>Image</th>
+			<th>Shared?</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= item.id %></td>
+			<td><%= item.name %></td>
+			<td><%= item.description %> </td>
+			<td><%= item.category %></td>
+			<td><%= image_tag item.avatar.url ('thumb') %></td>
+			<td><button><%= link_to 'Share', item %></button></td>
+			<td><button>
+				<%= link_to 'Delete', item, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
+			</button></td>
+		</tr>
+	</tbody>
+	<% end %>
+</table>
+<hr>
+<h1>Items I've Borred</h1>
+<table></table>

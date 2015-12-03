@@ -15,8 +15,7 @@ class ItemsController < ApplicationController
   def create
     @user = current_user
     if user_signed_in?
-      @item = Item.new(item_params)
-      @item.save
+      @user.items.create(item_params)
       redirect_to profile_path(@user)
     else
       flash[:notice] = "You'll need to have an account or login to create an item."
@@ -31,7 +30,17 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    @user = current_user
+    @item.destroy
+    if @item = nil
+      redirect_to profile_path(id: @user)
+    else
+      flash[:alert] = "Ooops, something went wrong."
+
+    end
   end
+
+
 
 
 
