@@ -10,4 +10,14 @@ class User < ActiveRecord::Base
 
   has_many :item_shares
   has_many :shared_items, :foreign_key => "shared_user_id", :through => :items, :source => :item_shares
+
+  def self.search(user_name)
+  	if user_name
+  		username.downcase!
+  		where('LOWER(name) LIKE ?', "%#{user_name}%")
+  	else
+  		all
+  	end
+  end
+  
 end

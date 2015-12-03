@@ -4,7 +4,12 @@ class UsersController < ApplicationController
 	before_action :authenticate_user!, :set_user, only: [:show]
 
   def index
-  	@users = User.all
+    if params[:search]
+      @users = User.where(params[:search])
+    else 
+  	  @users = User.all
+    end
+   
   end
 
   def show
@@ -15,6 +20,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     end
   end
+
 
 
   private
