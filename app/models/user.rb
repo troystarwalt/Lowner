@@ -13,11 +13,10 @@ class User < ActiveRecord::Base
 
   def self.search(user_name)
   	if user_name
-  		username.downcase!
-  		where('LOWER(name) LIKE ?', "%#{user_name}%")
+  		user_name.downcase!
+  		where('LOWER(username) LIKE ?', "%#{user_name}%")
   	else
   		all
   	end
   end
-  
 end
