@@ -20,9 +20,13 @@
 <ul class="hmenu">
   <%= render 'devise/shared/registration_items' %>
   <%= render 'devise/shared/login_items' %>
+  <% if user_signed_in? %>
+  <%= link_to 'Profile', profile_path(current_user) %>
+  <% end %>
 </ul>
-
-<%= yield %>
+<div class="wrapper">
+  <%= yield %>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </body>
 </html>

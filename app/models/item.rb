@@ -11,5 +11,4 @@ class Item < ActiveRecord::Base
   	def log_destroy_action
   		puts "Item Deleted"
   	end
-
 end

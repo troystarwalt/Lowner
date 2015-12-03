@@ -2,3 +2,14 @@
 
 @import "bootstrap";
 @import "users";
+
+
+.wrapper{
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.user_specific_photo {
+	max-width: 200px;
+	max-height: 200px;
+}

@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   resources :item_shares, only: [:new, :edit, :update, :destroy, :create]
 
   devise_for :users
+
+  # root 'high_voltage/pages#show {:id=>"index"}'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -49,7 +49,7 @@
 			<td><%= item.description %> </td>
 			<td><%= item.category %></td>
 			<td><%= image_tag item.avatar.url ('thumb') %></td>
-			<td><%= @user.shared_items.id %></td>
+			<td><% if @user.shared_items.empty? %>No Loaned Items<% end %></td>
 			<td><button><%= link_to 'Loan', new_item_share_path(item) %></button></td>
 			<td><button>
 				<%= link_to 'Delete', item, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
@@ -60,7 +60,22 @@
 </table>
 <hr>
 <h1>Items I've Borrowed</h1>
+<% if ItemShare.where(user_id: @userId) %>
+	Sexy times
+<% end %>
+<hr>
+<h1>Shared Items</h1>
 
 <% if @user.shared_items.empty? %>
 	No Shared Items Found
+	<% else %>
+	<div>
+	<% @have.each do |have| %>
+	<p><%= have.borrower.username %></p>
+	<p><%= have.borrower.email %></p>
+	<% end %>
+	</div>
 <% end %>
+
+
+

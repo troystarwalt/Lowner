@@ -10,6 +10,7 @@
 <table>
 	<thead>
 		<tr>
+			<th>ID</th>
 			<th>Username</th>
 			<th>Member Since</th>
 			<th>Profile Photo</th>
@@ -17,16 +18,16 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td>
-				<%= u.username %>
-			</td>
+			<td><%= u.id %></td>
+			<td><%= u.username %></td>
 			<td><%= u.created_at %></td>
-			<td><%= image_tag u.avatar.url("small") %></td>
+			<div class="user_photo"><td><%= image_tag u.avatar.url("small"), class: "user_specific_photo" %></td></div>
 		</tr>
 	</tbody>
 </table>
 
 <% end %>
 
+<%= link_to 'Back', users_path %>
 
 

@@ -7,6 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 require 'faker'
+User.destroy_all
+ItemShare.destroy_all
+Item.destroy_all
 
 5.times do |index|
 User.create!(
@@ -19,5 +22,17 @@ User.create!(
  	bio: Faker::Lorem.paragraph,
  	)
 end
+
+User.create!(
+	email: "troyst83@gmail.com",
+	username: "troyst",
+	password: "Slayer83!"
+	)
+
+User.create!(
+	email: "chopper@gmail.com",
+	username: "chopper",
+	password: "Slayer83!"
+	)
 
 p "Created #{User.count} users"
