@@ -13,6 +13,18 @@ They then need to select a user to share this item with. So that the ItemShare w
 <%= form_for @new_share do |f| %>
 	<%= f.label :user_id%>
 	<%= f.number_field :user_id %>
-	<%= f.hidden_field :item_id, { :value => :item_id} %>
+	<%= f.hidden_field :item_id, { :value => @item_id} %>
 <%= f.submit %>
 <% end %>
+
+
+
+<h3>A list of all the Users</h3>
+<%  @users.each do |user| %>
+
+	<%= user.username %>
+	<%= user.id %>
+	<hr>
+	<br>
+
+<% end %>	

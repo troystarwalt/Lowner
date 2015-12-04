@@ -3,15 +3,11 @@
 	- Alows user to delete and or edit account.
 	- Shows the items the user owns
 	- Shows the items the user has loaned
-	- Shows th eitems the user has borrwed
- -->
+	- Shows the items the user has borrwed
+-->
 
 
-<%= @user.username %>
-<%= @user.first_name %>
-<%= @user.last_name %>
-<%= @user.bio %>
-<%= @user.cell_phone %>
+
 <div class="clip-wrap">
 	<%= image_tag @user.avatar.url(:small), class: "user_profile_element" %>
 </div>
@@ -23,11 +19,15 @@
 		</clipPath>
 	</defs>
 </svg>
+<p><%= @user.username %></p>
+<p><%= @user.first_name %> <%= @user.last_name %></p>
+<p><%= @user.bio %></p>
+<p><%= @user.cell_phone %></p>
 <div class="search_button_area">
-<button class="search_button"><%= link_to 'Search Other Users', users_path %></button>
+	<button class="search_button"><%= link_to 'Search Other Users', users_path %></button>
 </div>
 
-<h1>Owned Items</h1>
+<h1>Owned Crap</h1>
 <table>
 	<% @user.items.each do |item| %>
 	<thead>
@@ -50,43 +50,50 @@
 			<td><%= item.category %></td>
 			<td><%= image_tag item.avatar.url ('thumb') %></td>
 			<td>
-			<% if @user.shared_items.empty? %>
-			No Loaned Items
-			<% else %>
-			<% @have.each do |have| %>
-			Loaned To: <%= have.borrower.username %>
-			<% end %>
-			<% end %></td>
-			<td><button><%= link_to 'Loan', new_item_share_path(item) %></button></td>
-			<td><button>
-				<%= link_to 'Delete', item, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
-			</button></td>
-		</tr>
-	</tbody>
-	<% end %>
-</table>
-<hr>
-<h1>Items I've Borrowed</h1>
-<% if ItemShare.where(user_id: @userId) %>
-	Sexy times
-<% end %>
-<hr>
-<h1>Shared Items</h1>
-
-<% if @user.shared_items.empty? %>
-	No Shared Items Found
-	<% else %>
-	
-		<div>
-		<% @have.each do |have|  %>
-		<p><%= have.borrower.username %></p>
-		<p><%= have.borrower.email %></p>
-		<p><%= have.item_borrowed.name %>
+				<% if @user.shared_items.where(item_id: item.id).length < 1 %>
+				Nope
+				<% else %>
+				Loaned To: <%= @user.shared_items.find_by_item_id(item.id).borrower.username %>
+				<% end %></td>
+				<td><button><%= link_to 'Loan', new_item_share_path(item: item.id) %></button></td>
+				<td><button>
+					<%= link_to 'Delete', item, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
+				</button></td>
+			</tr>
+		</tbody>
 		<% end %>
-		</div>
-		<hr>
+	</table>
+	<hr>
+	<h1>Borrowed Crap</h1>
+	<% if ItemShare.where(user_id: @userId) %>
+	Sexy times
+	<% end %>
+	<hr>
 	
-<% end %>
+	<% if @user.shared_items.present? %>
+
+	<h1>Loanned Crap</h1>
+	<div>
+		<table>
+			<% @have.each do |have|  %>
+			<thead>
+				<tr>
+					<th>Item</th>
+					<th>Who has it?</th>
+					<th>Their Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><%= have.item_borrowed.name %></td>
+					<td><%= have.borrower.username %></td>
+					<td><%= have.borrower.email %></td>
+				</tr>
+			</tbody>
+			<% end %>
+		</table>
+		<% end %>
+	</div>
 
 
 

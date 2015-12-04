@@ -5,11 +5,11 @@ class ItemShare < ActiveRecord::Base
 	validates :user_id, presence: true
 	validates :item_id, presence: true
 		def borrower
-			User.where(user_id).first
+			User.where(id: user_id).first
 		end	
 
 		def item_borrowed
-			Item.where(item_id).first
+			Item.where(id: item_id).first
 		end
 
 end
