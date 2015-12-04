@@ -10,10 +10,9 @@ They then need to select a user to share this item with. So that the ItemShare w
 
  <p>Who do you want to share this with?</p>
 
-<%= form_for @new_share do |ns| %>
-	<%= ns.label :user_id%>
-	<%= ns.number_field :user_id %>
-	<%= ns.label :item_id %>
-	<%= ns.number_field :item_id %>
-<%= ns.submit %>
+<%= form_for @new_share do |f| %>
+	<%= f.label :user_id%>
+	<%= f.number_field :user_id %>
+	<%= f.hidden_field :item_id, { :value => :item_id} %>
+<%= f.submit %>
 <% end %>

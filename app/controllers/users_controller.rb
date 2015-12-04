@@ -13,10 +13,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
-    @userId = current_user.id
-    @have = ItemShare.find_by_user_id(current_user.id)
-
+    @have = current_user.shared_items
     if current_user
     else
       redirect_to root_path

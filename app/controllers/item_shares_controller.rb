@@ -1,5 +1,6 @@
 class ItemSharesController < ApplicationController
   def new
+    byebug
     @new_share = ItemShare.new
   end
 
@@ -13,14 +14,15 @@ class ItemSharesController < ApplicationController
   end
 
   def create
-
-
-   if @new_share = ItemShare.new(itemShare_params)
+    @user = current_user
+  @new_share = ItemShare.new(itemShare_params)
+   if @new_share.save(itemShare_params)
     # if @user.exists?(:user_id=>@user.id) && @item.exist?(:item_id=>@user.id)
-      @new_share.save(itemShare_params)
+      redirect_to user_path(user)
+
     else
       render new_item_share_path
-      flash[:alert] = "Sorry either that User or Item does not exist."
+      flash[:notice] = "Sorry either that User or Item does not exist."
     end
   end
 
