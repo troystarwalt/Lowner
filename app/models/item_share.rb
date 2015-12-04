@@ -12,6 +12,18 @@ class ItemShare < ActiveRecord::Base
 		Item.where(id: item_id).first
 	end
 
+	def loaner
+		User.where(id: user_id).first
+	end
+
+	def item_loaned
+		@shared_itemzzz = Item.where(id: ItemShare.where(user_id: current_user.id))
+		@shared_itemzzz.map do |item|
+			item.user
+		end		
+		# Item.where(id: item_id).first
+	end
+
 	def self.search_users(user_name)
 		if user_name
 			user_name.downcase!
@@ -22,3 +34,14 @@ class ItemShare < ActiveRecord::Base
 	end
 
 end
+
+
+# User.find(40).shared_items
+
+# Working Method But Not Clean:
+# ==============================
+# ItemShare.where(user_id: 39).each do |item|
+# 	puts Item.find(item.item_id).user.username
+# end
+
+# Item.joins(:shared_users).where(:item_shares => {user_id: 40}, :users => {id: 40})
