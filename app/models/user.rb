@@ -20,10 +20,4 @@ class User < ActiveRecord::Base
   		all
   	end
   end
-
-  # def self.borrower
-  #   User.where(user_id).first
-  # end 
-
-
 end

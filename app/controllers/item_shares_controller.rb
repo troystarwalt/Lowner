@@ -3,7 +3,12 @@ class ItemSharesController < ApplicationController
     # byebug
     @item_id = params[:item]
     @new_share = ItemShare.new
-    @users = User.all
+    if params[:search_users]
+      @users = User.search(params[:search_users])
+      @item_search_id = Item.search(params[:item_id])
+    else 
+      @users = User.all
+    end
   end
 
   def edit
@@ -16,12 +21,11 @@ class ItemSharesController < ApplicationController
   end
 
   def create
-    @new_share = ItemShare.new(itemShare_params)
+    @new_share = ItemShare.new(:user_id => params[:user_id], :item_id => params[:item_id])
     @user = current_user
-    # @itemId = @user.items
-      if @new_share.save(itemShare_params)
-    # if @user.exists?(:user_id=>@user.id) && @item.exist?(:item_id=>@user.id)
+      if @new_share.save
         redirect_to profile_path(current_user)
+        flash[:notice] = "Item loanned."
 
       else
         render new_item_share_path
