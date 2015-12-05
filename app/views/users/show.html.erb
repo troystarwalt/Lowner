@@ -8,8 +8,8 @@
 
 
 <div class="row">
-	<div class="clip-wrap col-lg-3">
-		<%= image_tag @user.avatar.url(:small), class: "user_profile_element" %>
+	<div class="clip-wrap col-xs-5">
+		<%= image_tag @user.avatar.url(:small), class: "user_profile_element img-thumbnail img-responsive" %>
 		<svg width="0" height="0">
 			<defs>
 				<clipPath id="clip-shape" clipPathUnits="objectBoundingBox">
@@ -18,17 +18,19 @@
 			</defs>
 		</svg>
 	</div>
-	<div class="user-info col-lg-7">
+	<div class="user-info col-xs-7">
 		<p><%= @user.username %></p>
 		<p><%= @user.first_name %> <%= @user.last_name %></p>
 		<p><%= @user.bio %></p>
 		<p><%= @user.cell_phone %></p>
 	</div>
-	<div class="button-areas col-lg-2">
-		<div class="search_button_area">
-			<button class="search_button"><%= link_to 'Search Other Users', users_path %></button>
+</div>
+<div class="row">
+	<div class="button-areas col-xs-12">
+		<div class="search_button_area col-xs-6 pull-left">
+		<%= button_to 'Search Other Users', users_path %>
 		</div>
-		<div><%= link_to 'Create Item to Share', new_item_path %></div>
+		<div class=" col-xs-6 pull-right"><%= button_to 'Create Item to Share', new_item_path %></div>
 	</div>
 </div>
 <div class="row">
@@ -54,7 +56,7 @@
 				<td><%= item.name %></td>
 				<td><%= item.description %> </td>
 				<td><%= item.category %></td>
-				<td><%= image_tag item.avatar.url ('thumb') %></td>
+				<td><%= image_tag item.avatar.url ('thumb'), class: "img-thumbnail" %></td>
 				<td>
 					<% if @user.shared_items.where(item_id: item.id).length < 1 %>
 					Nope
@@ -64,10 +66,10 @@
 					<td><% if @user.shared_items.where(item_id: item.id).length < 1 %>
 					<button><%= link_to 'Loan', new_item_share_path(item: item.id) %></button>
 					<% else %>
-					<button><%= link_to 'Take Back' %></button><% end %></td>
-					<td><button>
-						<%= link_to 'Delete', item, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
-					</button></td>
+					<%= button_to 'Take Back' %><% end %></td>
+					<td>
+						<%= button_to 'Delete', item, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
+					</td>
 				</tr>
 			</tbody>
 			<% end %>
@@ -82,7 +84,7 @@
 	<hr>
 
 	<% if @user.shared_items.present? %>
-	<h1>Loanned Crap</h1>
+	<h1>Lowned Crap</h1>
 	<div>
 		<table class="table">
 

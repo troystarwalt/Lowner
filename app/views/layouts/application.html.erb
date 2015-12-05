@@ -9,12 +9,11 @@
 <body>
   <div class="container-fluid">
     <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-      <%= link_to 'Borrowed', '/', class: "navbar-brand" %>
+      <%= link_to 'Lowner', '/', class: "navbar-brand" %>
       <ul class="nav navbar-nav pull-right">
         <li class="nav-item"><a href="##" class="nav-link" data-toggle="tab">Home</a></li>
         <li class="nav-item"><%= link_to 'About', page_path('about'), class: "nav-link" %></li>
-        <li class="nav-item">
-          <%= link_to_if user_signed_in?, 'Profile', profile_path(current_user), class: "nav-link" %></li>
+        <%= render 'layouts/shared/profile_items' %>
         </ul>
       </nav>
     </div>

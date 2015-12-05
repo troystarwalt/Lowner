@@ -14,8 +14,6 @@ class UsersController < ApplicationController
 
   def show
     @have = current_user.shared_items
-    # @it_is_loaned = @user.shared_items.where(item_id: item.id).length < 1
-    # @item = Item.find_by(id: params[:id])
     if current_user
     else
       redirect_to root_path

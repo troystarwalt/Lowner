@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+  <li class= "nav-item">
+  <%= link_to(current_user.email, profile_path(current_user), class: "nav-link") %>        
+  </li>
+<% else %>
+  <li class= "nav-item">
+  <%= link_to('Login to Lowner', new_user_session_path, class: "nav-link")  %>  
+  </li>
+<% end %>
