@@ -89,11 +89,33 @@
 		<div class="col-xs-12">
 			<h1>Borrowed Crap</h1>
 		</div>
-		<%= ItemShare.last.item_loaned %>
+
 		
 
 
 	</div>
+	<div class="table-responsive">
+		<table class="table table-striped table-hover">
+
+			<thead class="thead-inverse">
+				<tr>
+					<th>Item</th>
+					<th>Who owns it?</th>
+					<th>Their Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @user.borrowed_from_user.each do  |item| %>
+				<tr>
+					<td><%= item[0] %></td>
+					<td><%= item[1] %></td>
+					<td><%= item[2] %></td>
+				</tr>
+				<% end %>
+			</tbody>
+
+		</table>
+
 	<hr>
 
 	<% if @user.shared_items.present? %>
