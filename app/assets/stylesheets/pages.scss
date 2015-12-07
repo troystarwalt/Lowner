@@ -1,3 +1,68 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body.home_page {
+	background: url('/lots_of_books.jpeg');
+
+	background-position: center center;
+
+	background-repeat: no-repeat;
+
+	background-attachment: fixed;
+
+	background-size: cover;
+
+	background-color: #8FC0A9;
+
+	padding-bottom: 100px;
+
+	.blur-bg {
+		background-color: white;
+		opacity: .9;
+
+	}
+
+}
+
+.jumbotron {
+	background-color: white;
+	opacity: 1;
+}
+
+.logo-text {
+	font-family: 'Lobster';
+	font-size: 3em;
+	// opacity: 1;
+}
+
+.menuButton {
+	font-size: 1.5em;
+	font-color: #4A7C59;
+}
+
+#hidden-block {
+	display: none;
+}
+
+
+
+footer {
+	height: 100px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+
+	.box-around-profile {
+		background-color: white;
+		width: 125px;
+		height: 25px;
+
+		.footer-link {
+			color: #222222
+		}
+	}
+	
+}
+

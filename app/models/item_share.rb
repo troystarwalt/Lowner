@@ -12,9 +12,9 @@ class ItemShare < ActiveRecord::Base
 		Item.where(id: item_id).first
 	end
 
-	def loaner
-		User.where(id: user_id).first
-	end
+	# def loaner
+	# 	User.where(id: user_id).first
+	# end
 
 
 

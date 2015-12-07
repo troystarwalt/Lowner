@@ -10,8 +10,47 @@
 	<%= csrf_meta_tags %>
 </head>
 <body class="home_page">
-	<div class="container-fluid"></div>
-	<h1>Lowner</h1>
+	<div class="wrapper">
+		<div class="blur-bg">
+			<div class="jumbotron">
+				<div class="container">
+					<h1 class="text-center logo-text">LOWNER</h1>
+				</div>
+				<nav class="nav navbar">
+				<ul class=" nav nav-pills text-center">
+						<li class="nav-link">
+							<%= link_to 'Sign Up', new_user_registration_path, class: 'menuButton' %>
+						</li>
+						<li class="nav-link">
+							<a href="###" class="menuButton" id="learn-more-button">Learn More</a>
+						</li>
+						<li class="nav-link">
+							<%= link_to 'Sign In', new_user_session_path, class: 'menuButton' %>
+						</li>
+					</ul>
+				</nav>
+				<div id="hidden-block" class="learn-more" display="none">
+					<p>This should be hidden
+						Stumptown meh master cleanse tote bag ethical. Raw denim austin viral 8-bit ramps, affogato bitters thundercats narwhal irony selfies keytar dreamcatcher sriracha fashion axe. Fanny pack meh hashtag ugh, migas drinking vinegar tilde humblebrag seitan locavore pabst try-hard mustache. Ramps heirloom godard typewriter bespoke 3 wolf moon, twee cray freegan vegan XOXO. Art party pour-over food truck kogi, scenester venmo tacos portland dreamcatcher squid tumblr vinyl hella tote bag sartorial. Kitsch XOXO swag scenester, selfies wayfarers put a bird on it gastropub irony listicle knausgaard quinoa art party hoodie. Meditation organic offal, kitsch messenger bag franzen squid yuccie microdosing.
 
-</body>
-</html>
+						Before they sold out organic four dollar toast kitsch, fashion axe banh mi bicycle rights waistcoat plaid. Knausgaard VHS intelligentsia meh yr +1. Food truck meditation tote bag banjo, hoodie forage semiotics hashtag humblebrag disrupt gentrify readymade flexitarian roof party. Roof party locavore mlkshk fanny pack mixtape, viral williamsburg pop-up drinking vinegar PBR&B four loko DIY chillwave you probably haven't heard of them single-origin coffee. Vegan cold-pressed farm-to-table pickled butcher wayfarers. Vice craft beer trust fund selfies, dreamcatcher asymmetrical pop-up letterpress kitsch gentrify yr shabby chic. Chicharrones hella next level chillwave, trust fund green juice tofu kinfolk.
+
+						Intelligentsia chillwave lo-fi deep v wayfarers, biodiesel whatever thundercats. Selvage kickstarter food truck salvia, retro church-key offal franzen aesthetic. Kale chips intelligentsia church-key pabst, YOLO you probably haven't heard of them trust fund put a bird on it normcore etsy four loko pickled selfies. Selfies ethical gastropub, bespoke tote bag humblebrag DIY polaroid swag occupy actually direct trade. Farm-to-table vice tousled, iPhone slow-carb hashtag irony yuccie asymmetrical kogi plaid heirloom typewriter banjo green juice. Everyday carry squid echo park, wolf selfies green juice art party artisan forage helvetica slow-carb. Cliche tote bag tumblr truffaut.
+
+						Squid marfa viral bitters letterpress chicharrones. Photo booth ethical typewriter, pickled pop-up vegan ennui venmo biodiesel beard blue bottle selvage scenester fanny pack street art. Retro tacos pabst, trust fund stumptown portland cliche lo-fi. Mlkshk keytar wayfarers ethical, venmo lomo food truck synth humblebrag fap. Bitters tilde franzen put a bird on it photo booth. Aesthetic green juice organic, kitsch chambray deep v kogi single-origin coffee. Listicle bushwick etsy gentrify drinking vinegar +1, pitchfork shabby chic normcore direct trade.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+			<% if user_signed_in? %>
+			<footer class="footer" id="taco-town">
+				<div class="box-around-profile center-block">
+					<%= link_to "Go to Profile", profile_path(current_user),class: 'footer-link' %>
+				</div>
+			</footer>
+			<% end %>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	</body>
+	</html>
