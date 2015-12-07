@@ -11,7 +11,7 @@ User.destroy_all
 ItemShare.destroy_all
 Item.destroy_all
 
-5.times do |index|
+15.times do |index|
 User.create!(
 	username: Faker::Team.creature,
 	password: Faker::Internet.password(8, 10),
@@ -26,13 +26,13 @@ end
 User.create!(
 	email: "troyst83@gmail.com",
 	username: "troyst",
-	password: "Slayer83!"
+	password: "password"
 	)
 
 User.create!(
 	email: "chopper@gmail.com",
 	username: "chopper",
-	password: "Slayer83!"
+	password: "password"
 	)
 
 p "Created #{User.count} users"

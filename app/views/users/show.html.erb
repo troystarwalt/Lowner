@@ -8,8 +8,8 @@
 
 
 <div class="row">
-	<div class="clip-wrap col-xs-5">
-		<%= image_tag @user.avatar.url(:small), class: "user_profile_element img-thumbnail img-responsive" %>
+	<div class="clip-wrap col-xs-6">
+		<%= image_tag @user.avatar.url(:small), class: "user_profile_element img-rounded img-responsive" %>
 		<svg width="0" height="0">
 			<defs>
 				<clipPath id="clip-shape" clipPathUnits="objectBoundingBox">
@@ -18,7 +18,7 @@
 			</defs>
 		</svg>
 	</div>
-	<div class="user-info col-xs-7">
+	<div class="user-info col-xs-6">
 		<p><%= @user.username %></p>
 		<p><%= @user.first_name %> <%= @user.last_name %></p>
 		<p><%= @user.bio %></p>
@@ -26,18 +26,19 @@
 	</div>
 </div>
 <div class="row">
-	<div class="button-areas col-xs-12">
-		<div class="search_button_area col-xs-6 pull-left">
-		<%= button_to 'Search Other Users', users_path %>
-		</div>
-		<div class=" col-xs-6 pull-right"><%= button_to 'Create Item to Share', new_item_path %></div>
+	<div class="search_button_area col-xs-6"><%= button_to 'Create Item to Share', new_item_path, method: :get, class: "btn" %>
+		
 	</div>
+	<div class=" col-xs-6"><%= button_to 'Search Other Users', users_path, method: :get, class: "btn" %></div>
 </div>
 <div class="row">
-	<h1>Owned Crap</h1>
-	<table class="table" >
-
-		<thead>
+	<div class="col-xs-12">
+		<h1>Owned Crap</h1>
+	</div>
+</div>
+<div class="table-responsive">
+	<table class="table table-striped table-hover" >
+		<thead class="thead-inverse">
 			<tr>
 				<th>ID</th>
 				<th>Name</th>
@@ -63,32 +64,48 @@
 					<% else %>
 					Loaned To: <%= @user.shared_items.find_by_item_id(item.id).borrower.username %>
 					<% end %></td>
-					<td><% if @user.shared_items.where(item_id: item.id).length < 1 %>
-					<button><%= link_to 'Loan', new_item_share_path(item: item.id) %></button>
-					<% else %>
-					<%= button_to 'Take Back' %><% end %></td>
 					<td>
-						<%= button_to 'Delete', item, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
+						
+						<button class="btn">
+						<% if @user.shared_items.where(item_id: item.id).length < 1 %>
+							<%= link_to 'Loan', new_item_share_path(item: item.id)%>
+							<% else %>
+						<%= link_to 'Take Back'%>
+						<% end %>
+						</button>
+						
+					</td>
+					<td>
+						<%= button_to 'Delete', item, method: :delete, remote: true, data: { confirm: "Are you sure?" }, class: "btn-danger" %>
 					</td>
 				</tr>
+				<% end %>
+
 			</tbody>
-			<% end %>
 		</table>
 	</div>
 	<hr>
-	<h1>Borrowed Crap</h1>
-	<!-- This should go a list of items that the user has borrowed. -->	
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>Borrowed Crap</h1>
+		</div>
+		<%= ItemShare.last.item_loaned %>
+		
 
 
-
+	</div>
 	<hr>
 
 	<% if @user.shared_items.present? %>
-	<h1>Lowned Crap</h1>
-	<div>
-		<table class="table">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>Lowned Crap</h1>
+		</div>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-striped table-hover">
 
-			<thead>
+			<thead class="thead-inverse">
 				<tr>
 					<th>Item</th>
 					<th>Who has it?</th>
@@ -107,6 +124,5 @@
 		</table>
 		<% end %>
 	</div>
-
 
 

@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
   def destroy
     @user = current_user
     @item.destroy
-    if @item = nil
+    if @item == nil
       redirect_to profile_path(id: @user)
     else
       flash[:alert] = "Ooops, something went wrong."

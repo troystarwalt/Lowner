@@ -2,34 +2,35 @@
 <html>
 <head>
   <title>Borrow</title>
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
-  <div class="container-fluid">
-    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-      <%= link_to 'Lowner', '/', class: "navbar-brand" %>
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse nav-bg container">
+      <%= link_to 'Lowner', '/', class: "navbar-brand site-name" %>
       <ul class="nav navbar-nav pull-right">
         <li class="nav-item"><a href="##" class="nav-link" data-toggle="tab">Home</a></li>
         <li class="nav-item"><%= link_to 'About', page_path('about'), class: "nav-link" %></li>
         <%= render 'layouts/shared/profile_items' %>
+      </ul>
+  </nav>
+  <div class="container-fluid">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+    <footer>
+      <nav class="navbar navbar-fixed-bottom navbar-light bg-faded">
+        <ul class="nav navbar-nav  pull-right nav-tabs">
+          <%= render 'devise/shared/registration_items' %>
+          <%= render 'devise/shared/login_items' %>
         </ul>
       </nav>
-    </div>
-    <div class="container-fluid">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
-      <footer>
-        <nav class="navbar navbar-fixed-bottom navbar-light bg-faded">
-          <ul class="nav navbar-nav  pull-right">
-            <%= render 'devise/shared/registration_items' %>
-            <%= render 'devise/shared/login_items' %>
-          </ul>
-        </nav>
-      </footer>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  </body>
-  </html>
+    </footer>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</body>
+</html>

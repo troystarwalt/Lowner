@@ -4,13 +4,35 @@
 @import "users";
 @import "static";
 
+@-moz-document url-prefix() {
+	fieldset {
+		display: table-cell;
 
-.wrapper{
-	max-width: 960px;
-	margin: 0 auto;
+	}
 }
 
-.user_profile_element {
-	max-width: 200px;
-	max-height: 200px;
+body {
+	font-family: 'Inconsolata';
 }
+	.user_profile_element {
+		max-width: 200px;
+		max-height: 200px;
+	}
+
+	.nav-bg {
+		background-image: url('woven.png');
+	}
+
+.site-name {
+	font-family: 'Inconsolata';
+}
+
+// nav {
+// 	ul {
+// 		li {
+// 			.nav-link {
+// 				font-size: 2em;
+// 			}
+// 		}
+// 	}
+// }

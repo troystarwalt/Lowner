@@ -17,11 +17,11 @@ class ItemShare < ActiveRecord::Base
 	end
 
 	def item_loaned
-		@shared_itemzzz = Item.where(id: ItemShare.where(user_id: current_user.id))
+		@shared_itemzzz = Item.where(id: ItemShare.where(user_id: 39))
 		@shared_itemzzz.map do |item|
-			item.user
+			item.user.username
 		end		
-		# Item.where(id: item_id).first
+		return @shared_itemzzz
 	end
 
 	def self.search_users(user_name)
