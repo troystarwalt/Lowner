@@ -16,13 +16,7 @@ class ItemShare < ActiveRecord::Base
 		User.where(id: user_id).first
 	end
 
-	def item_loaned
-		@shared_itemzzz = Item.where(id: ItemShare.where(user_id: 39))
-		@shared_itemzzz.map do |item|
-			item.user.username
-		end		
-		return @shared_itemzzz
-	end
+
 
 	def self.search_users(user_name)
 		if user_name

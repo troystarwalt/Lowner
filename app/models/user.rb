@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :items, dependent: :destroy
   has_many :item_shares
   has_many :shared_items, :foreign_key => "shared_user_id", :through => :items, :source => :item_shares
-  has_many :inverse_shared_items, :class_name => "item_shares", :foreign_key => "item_id"
+  has_many :inverse_shared_items, :class_name => "ItemShare", :foreign_key => "user_id"
   has_many :inverse_items, :through => :inverse_shared_items, :source => :user
 
   def self.search(user_name)
@@ -23,4 +23,13 @@ class User < ActiveRecord::Base
   		all
   	end
   end
+
+  def borrowed_from_user
+    array = []
+    inverse_shared_items.map do | item|
+      array << [item.item_borrowed.name, item.item_borrowed.user.username, item.item_borrowed.user.email]
+    end
+    array
+  end
+
 end
