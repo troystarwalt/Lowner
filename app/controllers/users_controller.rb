@@ -22,6 +22,8 @@ class UsersController < ApplicationController
     end
   end
 
+  def about
+  end
 
   private
 

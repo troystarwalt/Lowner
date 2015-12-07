@@ -1,9 +1,11 @@
 class PagesController < ApplicationController
-
-	include HighVoltage::StaticPage
+	# include HighVoltage::StaticPage
 
 
 	def index
-		render :layout => false
+		if user_signed_in?
+			redirect_to profile_path
+		else
+			render pages_path('/')
 	end
 end

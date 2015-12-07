@@ -1,5 +1,5 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<%= content_for :page_title, 'Search Other Users' %>
+
 <%= form_tag users_path, :method => 'get', id: 'users_search' do %>
 <p>
 	<%= text_field_tag :search, params[:search] %>
@@ -7,7 +7,7 @@
 </p>
 <% end %>
 <% @users.each do |u| %>
-<table>
+<table class = "table">
 	<thead>
 		<tr>
 			<th>ID</th>
@@ -21,7 +21,7 @@
 			<td><%= u.id %></td>
 			<td><%= u.username %></td>
 			<td><%= u.created_at %></td>
-			<div class="user_photo"><td><%= image_tag u.avatar.url("small"), class: "user_specific_photo" %></td></div>
+			<div class="user_photo"><td><%= image_tag u.avatar.url("small"), class: "user_specific_photo user_profile_element" %></td></div>
 		</tr>
 	</tbody>
 </table>

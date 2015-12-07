@@ -1,3 +1,5 @@
+<%= content_for :page_title, 'Search Other Users' %>
+
 <%= form_tag users_search_path, :method => 'get', :id => 'users_serach' do %>
 <p>
 	<%= text_field_tag :search, params[:search] %>

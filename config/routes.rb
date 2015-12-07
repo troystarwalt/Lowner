@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get '/profile', to: redirect('/profile/:id')
 
+  get '/about', to: 'users#about'
+
   resources :items
 
   get '/share/:id' => 'items#new_share'

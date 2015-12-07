@@ -27,12 +27,17 @@ body {
 	font-family: 'Inconsolata';
 }
 
-// nav {
-// 	ul {
-// 		li {
-// 			.nav-link {
-// 				font-size: 2em;
-// 			}
-// 		}
-// 	}
-// }
+body.home_page {
+	background: url('/home_photo_field.jpeg');
+
+	background-position: center center;
+
+	background-repeat: no-repeat;
+
+	background-attachment: fixed;
+
+	background-size: cover;
+
+	background-color: #8FC0A9;
+
+}
