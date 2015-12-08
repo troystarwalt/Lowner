@@ -7,20 +7,21 @@ class UsersController < ApplicationController
     if params[:search]
       @users = User.search(params[:search])
     else 
-  	  @users = User.all
-    end
+     @users = User.all
+   end
    
-  end
+ end
 
-  def show
-
-    @have = current_user.shared_items
-    # @it_is_loaned = @user.shared_items.where(item_id: item.id).length < 1
-    # @item = Item.find_by(id: params[:id])
+ def show
+  @have = current_user.shared_items
     if current_user == User.find(params[:id])
-      puts "hi"
+     flash
+    elsif current_user != User.find(params[:id])
+      redirect_to profile_path(current_user)
+      flash[:notice] = "This is your correct profile #{current_user.username}!"
     else
       redirect_to root_path
+      flash[:alert] = "You need to have an account or login before going to your profile page."
     end
   end
 
