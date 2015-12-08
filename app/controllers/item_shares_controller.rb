@@ -17,7 +17,11 @@ class ItemSharesController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
+    byebug
+    @itemshare = ItemShare.find(params[:id])
+    @itemshare.destroy
+    redirect_to profile_path(current_user)
   end
 
   def create

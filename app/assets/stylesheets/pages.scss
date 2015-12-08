@@ -1,6 +1,15 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
 body.home_page {
 	background: url('/lots_of_books.jpeg');
 
@@ -14,15 +23,42 @@ body.home_page {
 
 	background-color: #8FC0A9;
 
-	padding-bottom: 100px;
+	// box-shadow: 10px 10px 5px #888888;
 
 	.blur-bg {
 		background-color: white;
 		opacity: .9;
-
 	}
-
 }
+
+.wrapper {
+	min-height: 100%;
+	// Below code set's an equal footer height
+	margin-bottom: -150px;
+}
+
+.wrapper:after {
+	content: "";
+	display: block;
+}
+
+
+footer, .wrapper:after {
+	height: 150px;
+	width: 100%;
+	text-align: center;
+
+	.box-around-profile {
+		background-color: white;
+		width: 125px;
+		// height: 25px;
+
+		.footer-link {
+			color: #222222
+		}
+	}
+}
+
 
 .jumbotron {
 	background-color: white;
@@ -31,8 +67,7 @@ body.home_page {
 
 .logo-text {
 	font-family: 'Lobster';
-	font-size: 3em;
-	// opacity: 1;
+	font-size: 5em;
 }
 
 .menuButton {
@@ -42,27 +77,5 @@ body.home_page {
 
 #hidden-block {
 	display: none;
-}
-
-
-
-footer {
-	height: 100px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	text-align: center;
-
-	.box-around-profile {
-		background-color: white;
-		width: 125px;
-		height: 25px;
-
-		.footer-link {
-			color: #222222
-		}
-	}
-	
 }
 

@@ -68,16 +68,16 @@
 					<td>
 						
 						<button class="btn">
-						<% if @user.shared_items.where(item_id: item.id).length < 1 %>
+							<% if @user.shared_items.where(item_id: item.id).length < 1 %>
 							<%= link_to 'Loan', new_item_share_path(item: item.id)%>
 							<% else %>
-						<%= link_to 'Take Back'%>
-						<% end %>
+							<%= link_to 'Take Back', item_share_path, method: :delete %>
+							<% end %>
 						</button>
 						
 					</td>
 					<td>
-						<%= button_to 'Delete', item, method: :delete, remote: true, data: { confirm: "Are you sure?" }, class: "btn-danger" %>
+						<%= button_to 'Delete', item, method: :delete, remote: true, data: { confirm: "Are you sure you want to remove this item from your inventory?" }, class: "btn" %>
 					</td>
 				</tr>
 				<% end %>
@@ -86,14 +86,11 @@
 		</table>
 	</div>
 	<hr>
+	<% if @user.borrowed_from_user.present? %>
 	<div class="row">
 		<div class="col-xs-12">
 			<h1>Borrowed Crap</h1>
-		</div>
-
-		
-
-
+		</div>		
 	</div>
 	<div class="table-responsive">
 		<table class="table table-striped table-hover">
@@ -116,36 +113,36 @@
 			</tbody>
 
 		</table>
-
-	<hr>
-
-	<% if @user.shared_items.present? %>
-	<div class="row">
-		<div class="col-xs-12">
-			<h1>Lowned Crap</h1>
-		</div>
-	</div>
-	<div class="table-responsive">
-		<table class="table table-striped table-hover">
-
-			<thead class="thead-inverse">
-				<tr>
-					<th>Item</th>
-					<th>Who has it?</th>
-					<th>Their Email</th>
-				</tr>
-			</thead>
-			<tbody>
-				<% @have.each do |have|  %>
-				<tr>
-					<td><%= have.item_borrowed.name %></td>
-					<td><%= have.borrower.username %></td>
-					<td><%= have.borrower.email %></td>
-				</tr>
-			</tbody>
-			<% end %>
-		</table>
 		<% end %>
-	</div>
+		<hr>
+
+		<% if @user.shared_items.present? %>
+		<div class="row">
+			<div class="col-xs-12">
+				<h1>Lowned Crap</h1>
+			</div>
+		</div>
+		<div class="table-responsive">
+			<table class="table table-striped table-hover">
+
+				<thead class="thead-inverse">
+					<tr>
+						<th>Item</th>
+						<th>Who has it?</th>
+						<th>Their Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @have.each do |have|  %>
+					<tr>
+						<td><%= have.item_borrowed.name %></td>
+						<td><%= have.borrower.username %></td>
+						<td><%= have.borrower.email %></td>
+					</tr>
+				</tbody>
+				<% end %>
+			</table>
+			<% end %>
+		</div>
 
 
