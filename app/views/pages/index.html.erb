@@ -12,10 +12,11 @@
 </head>
 <body class="home_page">
 	<div id="wrapper">
-		<p class="text-center">
-			<span class="alert"><%= alert %></span>
-			<span class="notice"><%= notice %></span>
-		</p>
+		<% if flash[:alert] %>
+			<div class="alert alert-danger text-center" role="alert"><span class="alert"><%= alert %></span></div>
+		<% elsif flash[:notice] %>
+			<div class="alert alert-info text-center" role="alert"><span class="notice"><%= notice %></span></div>
+			<% end %>
 		<div class="blur-bg">
 			<div class="container">
 				<h1 class="text-center logo-text"><a href="/" class="main-logo-link">LOWNER</a></h1>

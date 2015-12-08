@@ -9,7 +9,7 @@
 <%= content_for :page_title, 'Profile' %>
 
 <div class="row">
-	<div class="clip-wrap col-xs-6">
+	<div class="clip-wrap col-xs-4">
 		<%= image_tag @user.avatar.url(:small), class: "user_profile_element img-rounded img-responsive" %>
 		<svg width="0" height="0">
 			<defs>
@@ -19,7 +19,7 @@
 			</defs>
 		</svg>
 	</div>
-	<div class="user-info col-xs-6">
+	<div class="user-info col-xs-8">
 		<p><%= @user.username %></p>
 		<p><%= @user.first_name %> <%= @user.last_name %></p>
 		<p><%= @user.bio %></p>
@@ -27,10 +27,10 @@
 	</div>
 </div>
 <div class="row">
-	<div class="search_button_area col-xs-6"><%= button_to 'Create Item to Share', new_item_path, method: :get, class: "btn" %>
+	<div class="search_button_area col-xs-3"><%= button_to 'Create Item to Share', new_item_path, method: :get, class: "btn" %>
 		
 	</div>
-	<div class="col-xs-6"><%= button_to 'Search Other Users', users_path, method: :get, class: "btn" %></div>
+	<div class="col-xs-3"><%= button_to 'Search Other Users', users_path, method: :get, class: "btn" %></div>
 </div>
 <div class="row">
 	<div class="col-xs-12">

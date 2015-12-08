@@ -14,11 +14,11 @@ This application is currently in development.
 
 ### UI/UX
 - [ ] Pop up account creation
-- [ ] OmniAuth
+- [x] OmniAuth
 - [ ] Tool Tip to Explain Action
-- [ ] Make Profile Larger
-- [ ] Add Logout Link To Home
-- [ ] Make LOWNER clickable
+- [x] Make Profile Larger
+- [x] Add Logout Link To Home
+- [x] Make LOWNER clickable
 
 ### Styling
 - [ ] Update background for app pages

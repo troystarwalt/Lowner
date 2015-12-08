@@ -18,7 +18,7 @@ class UsersController < ApplicationController
      flash
     elsif current_user != User.find(params[:id])
       redirect_to profile_path(current_user)
-      flash[:notice] = "This is your correct profile #{current_user.username}!"
+      flash[:notice] = "This is your correct profile page, #{current_user.username}!"
     else
       redirect_to root_path
       flash[:alert] = "You need to have an account or login before going to your profile page."

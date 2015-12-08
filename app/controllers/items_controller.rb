@@ -16,9 +16,10 @@ class ItemsController < ApplicationController
     @user = current_user
     if user_signed_in?
       @user.items.create(item_params)
+      flash[:notice] = "Item created."
       redirect_to profile_path(@user)
     else
-      flash[:notice] = "You'll need to have an account or login to create an item."
+      flash[:alert] = "You'll need to have an account or login to create an item."
       redirect_to new_user_session_path
     end
   end
