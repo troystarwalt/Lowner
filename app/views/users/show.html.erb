@@ -129,7 +129,8 @@
 					<tr>
 						<th>Item</th>
 						<th>Who has it?</th>
-						<th>Their Email</th>
+						<th>Email</th>
+						<th>Cell Phone</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -138,6 +139,7 @@
 						<td><%= have.item_borrowed.name %></td>
 						<td><%= have.borrower.username %></td>
 						<td><%= have.borrower.email %></td>
+						<td><%= have.borrower.cell_phone %> </td>
 					</tr>
 				</tbody>
 				<% end %>
