@@ -23,11 +23,12 @@ body.home_page {
 
 	background-color: #8FC0A9;
 
-	// box-shadow: 10px 10px 5px #888888;
-
 	.blur-bg {
 		background-color: white;
 		opacity: .9;
+	-webkit-clip-path: polygon(0 0, 100% 1%, 93% 100%, 7% 100%);
+	clip-path: polygon(0 0, 100% 1%, 93% 100%, 7% 100%);
+		// Not super functional.
 	}
 }
 
@@ -68,6 +69,10 @@ footer, .wrapper:after {
 .logo-text {
 	font-family: 'Lobster';
 	font-size: 5em;
+}
+
+a.main-logo-link{
+	color: #373a3c;
 }
 
 .menuButton {

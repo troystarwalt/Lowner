@@ -6,12 +6,11 @@
   <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
 </head>
 <body>
-  <nav class="navbar navbar-fixed-top navbar-dark bg-inverse nav-bg container clearfix">
+  <nav class="navbar navbar-fixed-top navbar-dark bg-inverse nav-bg clearfix">
     <%= link_to 'Lowner', '/', class: "navbar-brand site-name" %>
     <ul class="nav navbar-nav pull-right">
       <li class="nav-item"><a href="##" class="nav-link" data-toggle="tab">Home</a></li>
@@ -20,10 +19,11 @@
     </ul>
   </nav>
   <div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-12"><p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
     </div>
     <%= yield %>
     <footer>
@@ -36,5 +36,7 @@
     </footer>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
 </body>
 </html>

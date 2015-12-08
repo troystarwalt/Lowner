@@ -15,8 +15,10 @@ This application is currently in development.
 ### UI/UX
 - [ ] Pop up account creation
 - [ ] OmniAuth
-- [ ] Tool Tip to Explain
-
+- [ ] Tool Tip to Explain Action
+- [ ] Make Profile Larger
+- [ ] Add Logout Link To Home
+- [ ] Make LOWNER clickable
 
 ### Styling
 - [ ] Update background for app pages
@@ -25,6 +27,7 @@ This application is currently in development.
 - [ ] Switch up colors for app pages
 - [ ] Turn item table into cards
 - [ ] Make other tables expandable
+- [ ] Center Table Text
 
 ### Responsive
 - [ ] Create different size images for mobile screens. (media queries)

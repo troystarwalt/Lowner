@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   resources :item_shares, only: [:new, :edit, :update, :destroy, :create]
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "users/registrations"}
 
   # resources :pages
 

@@ -1,6 +1,5 @@
 class ItemSharesController < ApplicationController
   def new
-    # byebug
     @item_id = params[:item]
     @new_share = ItemShare.new
     if params[:search_users]
