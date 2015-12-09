@@ -17,10 +17,18 @@ class ItemSharesController < ApplicationController
   end
 
   def destroy
-    byebug
-    @itemshare = ItemShare.find(params[:id])
-    @itemshare.destroy
+
+    # item = current_user.shared_items.find()
+
+    itemshare = ItemShare.find_by_user_id(current_user.id)
+    if itemshare.blank?
+      flash[:alert] = "Not able to take back."
+        redirect_to profile_path(current_user)
+    else
+    itemshare.delete
+    flash[:notice] = "Shit"
     redirect_to profile_path(current_user)
+  end
   end
 
   def create

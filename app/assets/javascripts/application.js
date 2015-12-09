@@ -17,3 +17,11 @@
 //= require_tree .
 //= require tether
 //= require bootstrap-sprockets
+
+$(document).ready(function() {
+	$('.delete-item').click('ajax:success', function(event) {
+		// event.preventDefault();
+    	$(this).closest('tr').fadeOut();
+    	console.log("..............deleted item and reloaded")
+	});
+});

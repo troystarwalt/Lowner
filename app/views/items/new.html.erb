@@ -1,8 +1,20 @@
 <%= content_for :page_title, 'Create Something to Share' %>
 
+
+
 <%= form_for @item do |f| %>
+<div class="field">
 <%= f.label :name %>
-<%= f.text_field :name %>
+<%= f.text_field :name, required: true, autofocus: true %>
+</div>
+<div class="field">
+<%= f.label :category %>
+<%= f.text_field :category %>
+</div>
+<div class="field">
+<%= f.label :description %>
+<%= f.text_area :description %>
+</div>
   <div class="field">
   <%= f.label 'Upload a photo or image of your item.' %>
   <%= f.file_field :avatar %>

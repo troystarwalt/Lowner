@@ -12,6 +12,10 @@ class ItemShare < ActiveRecord::Base
 		Item.where(id: item_id).first
 	end
 
+	def remove_item
+		User.shared_item.where(id: item_id).first
+	end
+
 	def self.search_users(user_name)
 		if user_name
 			user_name.downcase!
