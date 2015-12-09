@@ -1,24 +1,37 @@
 <%= content_for :page_title, 'Create Something to Share' %>
 
+<h1>Create A New Item To Lown</h1>
+<small>After you create the item, you can quickly and easily share it with a friend.</small>
+<div class="form-container center-block">
+	<%= form_for @item do |f| %>
+	<div class="form-group row">
 
+		<%= f.label :name, class: "sr-only" %>
+		<div class="col-sm-12">
+			<%= f.text_field :name, required: true, autofocus: true, class: "form-control", placeholder: "Name of Item" %>
+		</div>
+	</div>
+	<div class="form-group row">
+		<%= f.label :category, class: "sr-only"  %>
+		<div class="col-sm-12">
+		<%= f.text_field :category, class: "form-control", placeholder: "Type of Item" %>
+		</div>
+	</div>
+	<div class="form-group row">
+		<%= f.label :description, class: "sr-only"  %>
+		<div class="col-sm-12">
+		<%= f.text_area :description, class: "form-control form-control-lg", placeholder: "Brief Description" %>
+		</div>
+	</div>
+	<label class="file">
+	<div class="row">
+		<%= f.file_field :avatar, class: "col-sm-8 form-control-file", id: "file"%>
 
-<%= form_for @item do |f| %>
-<div class="field">
-<%= f.label :name %>
-<%= f.text_field :name, required: true, autofocus: true %>
-</div>
-<div class="field">
-<%= f.label :category %>
-<%= f.text_field :category %>
-</div>
-<div class="field">
-<%= f.label :description %>
-<%= f.text_area :description %>
-</div>
-  <div class="field">
-  <%= f.label 'Upload a photo or image of your item.' %>
-  <%= f.file_field :avatar %>
-  </div>
-<%= f.submit %>
-
-<% end %>
+	<span class="file-custom col-sm-12"></span>
+	</div>
+	</label>
+		<div class="form-group row">
+			<%= f.submit "Create New Item", class: "btn btn-secondary" %>
+		</div>
+		<% end %>
+	</div>
