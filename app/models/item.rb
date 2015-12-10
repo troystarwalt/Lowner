@@ -19,6 +19,15 @@ class Item < ActiveRecord::Base
   	def log_destroy_action
   		puts "Item Deleted"
   	end
+
+  	def self.search(user_name)
+  	if user_name
+  		user_name.downcase!
+  		where('LOWER(username) LIKE ?', "%#{user_name}%")
+  	else
+  		all
+  	end
+  end
 end
 
 

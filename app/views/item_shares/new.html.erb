@@ -1,22 +1,39 @@
 <%= content_for :page_title, 'Lown It' %>
 
+<h2>Who do you want to share this with?</h2>
 
- <p>Who do you want to share this with?</p>
+<div class='form-group'>
+	<%= form_tag new_item_share_path, :method => 'get', id: 'users_search' do %>
+	<div class="row">
+		<div class="input-group col-md-3 pull-right">
+			<div class="input-group-addon"><i class="fa fa-search"></i></div>
+			<%= text_field_tag :search_users, params[:search_users], class: "form-control" %>
+			<div class="input-group-addon">
+				<%= hidden_field_tag :item_id, params[:item_id] %>
+				<%= submit_tag "Search", :name => nil %>
+			</div>
 
-<h3>A list of all the Users</h3>
-<%= form_tag new_item_share_path, :method => 'get', id: 'users_search' do %>
-<p>
-	<%= text_field_tag :search_users, params[:search_users] %>
-	<%= hidden_field_tag :item_id, params[:item_id] %>
-	<%= submit_tag "Search", :name => nil %>
-</p>
+		</div>
+	</div>
+</div>
 <% end %>
-<%  @users.each do |user| %>
 
-	<%= user.username %>
-	<%= user.id %>
-	<%= link_to "Loan It", item_shares_path(:user_id => user.id, :item_id => @item_id), :method => :post %>
-	<hr>
-	<br>
+<div class="card-columns">
+	<div class="row">
+		<%  @users.each do |user| %>
+		<div class="col-sm-4 col-md-3 ">
+			<div class="card card-custom-width">
 
-<% end %>	
+				<%= image_tag user.avatar, class: 'card-img-top card-img-users-share center-block' %>
+				<div class="card-block">
+					<h4 class="card-title"><%= user.username %></h4>
+					<p class="card-subtitle text-muted"><%= user.email%></p>
+
+					<%= link_to "Loan It", item_shares_path(:user_id => user.id, :item_id => @item_id), :method => :post, class: "btn btn-primary" %>
+				</div>	
+			</div>
+
+		</div>
+	<% end %>
+	</div>	
+</div>

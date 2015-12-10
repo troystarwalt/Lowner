@@ -5,6 +5,7 @@ class ItemSharesController < ApplicationController
     if params[:search_users]
       @users = User.search(params[:search_users])
       @item_search_id = Item.search(params[:item_id])
+      @item_id = params[:item]
     else 
       @users = User.all
     end

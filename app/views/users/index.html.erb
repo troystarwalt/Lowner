@@ -1,32 +1,43 @@
 <%= content_for :page_title, 'Search Other Users' %>
+<div class='form-group'>
+	<%= form_tag users_path, :method => 'get', id: 'users_search' do %>
+	<div class="row">
+		<div class="input-group col-md-3 pull-right">
+			<div class="input-group-addon"><i class="fa fa-search"></i></div>
+			<p>
+				<%= text_field_tag :search, params[:search], class: "form-control"  %>
+				<div class="input-group-addon">
+					<%= submit_tag "Search", :name => nil %>
+				</div>
+			</p>
+			<% end %>
 
-<%= form_tag users_path, :method => 'get', id: 'users_search' do %>
-<p>
-	<%= text_field_tag :search, params[:search] %>
-	<%= submit_tag "Search", :name => nil %>
-</p>
-<% end %>
-<% @users.each do |u| %>
+			
+		</div>
+	</div>
+</div>
+
 <table class = "table">
 	<thead>
 		<tr>
-			<th>ID</th>
 			<th>Username</th>
-			<th>Member Since</th>
+			<th>Profile Created</th>
 			<th>Profile Photo</th>
 		</tr>
 	</thead>
+
 	<tbody>
+		<% @users.each do |u| %>
 		<tr>
-			<td><%= u.id %></td>
 			<td><%= u.username %></td>
-			<td><%= u.created_at %></td>
+			<td><%= time_ago_in_words(u.created_at) %> Ago</td>
 			<div class="user_photo"><td><%= image_tag u.avatar.url("small"), class: "user_specific_photo user_profile_element" %></td></div>
 		</tr>
+		<% end %>
 	</tbody>
 </table>
 
-<% end %>
+
 
 <%= link_to 'Back', users_path %>
 
