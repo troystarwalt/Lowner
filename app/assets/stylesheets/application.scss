@@ -65,6 +65,20 @@ ul.nav li.active a.top-bar-nav-link {
 
 .form-container {
 	min-width: 100px;
-	max-width: 500px;
+	max-width: 600px;
+	height: 350px;
+	padding: 10px 5px;
+	box-shadow: 10px 10px 5px #888888;
+
+}
+
+.btn-info {
+	background-color: #8FC0A9;
+	border-color: #8FC0A9
+}
+
+.btn-info:hover, .btn-info:active, .btn-info:visited {
+	background-color: #8FC0A9;
+	border-color: #8FC0A9
 }
 

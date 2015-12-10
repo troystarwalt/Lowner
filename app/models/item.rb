@@ -20,3 +20,15 @@ class Item < ActiveRecord::Base
   		puts "Item Deleted"
   	end
 end
+
+
+# Categories
+# Book
+# Music
+# Money
+# Bike
+# Misc
+# Appliance
+# Clothes
+# Jewelry
+# Electronic

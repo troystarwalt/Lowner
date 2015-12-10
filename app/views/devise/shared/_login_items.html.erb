@@ -1,9 +1,9 @@
 <% if user_signed_in? %>
-  <li class= "nav-item"><span class="fa fa-sign-out"></span>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: "nav-link") %>        
+  <li class= "nav-item"><i class=""></i>
+  <%= link_to('  Logout', destroy_user_session_path, :method => :delete, class: "nav-link fa fa-sign-out") %>        
   </li>
 <% else %>
-  <li class= "nav-item"><span class="fa fa-sign-in"></span>
-  <%= link_to('Login', new_user_session_path, class: "nav-link")  %>  
+  <li class= "nav-item"><i class=""></i>
+  <%= link_to('Login', new_user_session_path, class: "nav-link fa fa-sign-in")  %>  
   </li>
 <% end %>

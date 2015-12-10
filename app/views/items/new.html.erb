@@ -1,7 +1,6 @@
 <%= content_for :page_title, 'Create Something to Share' %>
 
-<h1>Create A New Item To Lown</h1>
-<small>After you create the item, you can quickly and easily share it with a friend.</small>
+<h1 class="text-center">Create A New Item To Lown</h1>
 <div class="form-container center-block">
 	<%= form_for @item do |f| %>
 	<div class="form-group row">
@@ -14,24 +13,27 @@
 	<div class="form-group row">
 		<%= f.label :category, class: "sr-only"  %>
 		<div class="col-sm-12">
-		<%= f.text_field :category, class: "form-control", placeholder: "Type of Item" %>
+			<%= f.select :category, options_for_select([['Book', 1], ['Music', 2], ['Money', 3], ['Bike', 4], ['Misc', 5], ['Appliance', 6], ['Clothes', 7], ['Jewelry', 8], ['Electronic', 9]]), {include_blank: 'Select a Category'}, {class: 'form-control'} %>
 		</div>
 	</div>
 	<div class="form-group row">
 		<%= f.label :description, class: "sr-only"  %>
 		<div class="col-sm-12">
-		<%= f.text_area :description, class: "form-control form-control-lg", placeholder: "Brief Description" %>
+			<%= f.text_area :description, class: "form-control", placeholder: "Brief Description" %>
 		</div>
 	</div>
 	<label class="file">
-	<div class="row">
-		<%= f.file_field :avatar, class: "col-sm-8 form-control-file", id: "file"%>
+		<div class="row">
+			<%= f.file_field :avatar, class: "col-sm-8 form-control-file", id: "file"%>
 
-	<span class="file-custom col-sm-12"></span>
-	</div>
-	</label>
-		<div class="form-group row">
-			<%= f.submit "Create New Item", class: "btn btn-secondary" %>
+			<span class="file-custom"></span>
 		</div>
-		<% end %>
+	</label>
+	<div class="form-group row">
+		<%= f.submit "Create New Item", class: "btn btn-secondary col-sm-6 col-sm-offset-3" %>
+		<div class="col-sm-3">
+		<button type="button" class= "btn btn-info fa fa-question" id="find-out-more" data-toggle="popover" title="What does this do?" data-placement="right" data-content="After you create the item, you can loan it to a friend."></button>
+		</div>
 	</div>
+	<% end %>
+</div>

@@ -25,3 +25,14 @@ $(document).ready(function() {
     	console.log("..............deleted item and reloaded")
 	});
 });
+
+$(function () {
+  $('#find-out-more').popover({
+    container: 'body',
+    trigger: 'focus'
+  })
+})
+
+$('#find-out-more').hover(
+	function(){$(this).toggleClass('btn-lg')}
+);
