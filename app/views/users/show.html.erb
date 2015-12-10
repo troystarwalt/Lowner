@@ -71,7 +71,7 @@
 							<% if @user.shared_items.where(item_id: item.id).length < 1 %>
 							<%= link_to 'Loan', new_item_share_path(item: item.id)%>
 							<% else %>
-							<%= link_to 'Take Back', item_share_path, method: :delete %>
+							<%= link_to 'Take Back', item_share_path( item.find_item_share), method: :delete %>
 							<% end %>
 						</button>
 						

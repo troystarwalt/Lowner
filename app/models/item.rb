@@ -28,6 +28,11 @@ class Item < ActiveRecord::Base
   		all
   	end
   end
+
+  def find_item_share
+    ItemShare.where(item_id: self.id).first
+  end  
+
 end
 
 

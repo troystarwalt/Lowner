@@ -21,7 +21,8 @@ class ItemSharesController < ApplicationController
 
     # item = current_user.shared_items.find()
 
-    itemshare = ItemShare.find_by_user_id(current_user.id)
+    itemshare = ItemShare.where(id: params[:id]).first
+    # byebug
     if itemshare.blank?
       flash[:alert] = "Not able to take back."
         redirect_to profile_path(current_user)
