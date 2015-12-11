@@ -1,10 +1,4 @@
-<!-- This pages handles multiple functions:
-	- Shows user profile
-	- Alows user to delete and or edit account.
-	- Shows the items the user owns
-	- Shows the items the user has loaned
-	- Shows the items the user has borrwed
--->
+
 
 <%= content_for :page_title, 'Profile' %>
 
@@ -34,7 +28,7 @@
 </div>
 <div class="row">
 	<div class="col-xs-12">
-		<h1>Owned Crap</h1>
+		<h1>Your Stuff</h1>
 	</div>
 </div>
 <div class="table-responsive">
@@ -89,7 +83,7 @@
 	<% if @user.borrowed_from_user.present? %>
 	<div class="row">
 		<div class="col-xs-12">
-			<h1>Borrowed Crap</h1>
+			<h1>Borrowed Stuff</h1>
 		</div>		
 	</div>
 	<div class="table-responsive">
@@ -119,7 +113,7 @@
 		<% if @user.shared_items.present? %>
 		<div class="row">
 			<div class="col-xs-12">
-				<h1>Lowned Crap</h1>
+				<h1>Lowned Stuff</h1>
 			</div>
 		</div>
 		<div class="table-responsive">
@@ -130,7 +124,7 @@
 						<th>Item</th>
 						<th>Who has it?</th>
 						<th>Email</th>
-						<th>Cell Phone</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -139,7 +133,8 @@
 						<td><%= have.item_borrowed.name %></td>
 						<td><%= have.borrower.username %></td>
 						<td><%= have.borrower.email %></td>
-						<td><%= have.borrower.cell_phone %> </td>
+						<td><% if have.borrower.cell_phone.blank? %>No Cell Phone
+						<% else %><%= button_to "Send Reminder Message", twilio_send_path( have.borrower.cell_phone), method: :post %> <% end %> </td>
 					</tr>
 				</tbody>
 				<% end %>

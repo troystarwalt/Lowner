@@ -25,25 +25,25 @@ class ItemSharesController < ApplicationController
     # byebug
     if itemshare.blank?
       flash[:alert] = "Not able to take back."
-        redirect_to profile_path(current_user)
+      redirect_to profile_path(current_user)
     else
-    itemshare.delete
-    flash[:notice] = "Shit"
-    redirect_to profile_path(current_user)
-  end
+      itemshare.delete
+      flash[:notice] = "It's Yours Again!"
+      redirect_to profile_path(current_user)
+    end
   end
 
   def create
     @new_share = ItemShare.new(:user_id => params[:user_id], :item_id => params[:item_id])
     @user = current_user
-      if @new_share.save
-        redirect_to profile_path(current_user)
-        flash[:notice] = "Item loanned."
+    if @new_share.save
+      redirect_to profile_path(current_user)
+      flash[:notice] = "Item loanned."
 
-      else
-        render new_item_share_path
-        flash[:notice] = "Sorry either that User or Item does not exist."
-      end
+    else
+      render new_item_share_path
+      flash[:notice] = "Sorry either that User or Item does not exist."
+    end
   end
 
 

@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
+  :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
   validates :username, uniqueness: true
 
@@ -14,6 +14,9 @@ class User < ActiveRecord::Base
   has_many :shared_items, :foreign_key => "shared_user_id", :through => :items, :source => :item_shares
   has_many :inverse_shared_items, :class_name => "ItemShare", :foreign_key => "user_id"
   has_many :inverse_items, :through => :inverse_shared_items, :source => :user
+
+  after_update :fix_cell_phone
+  after_create :fix_cell_phone
 
   def self.search(user_name)
   	if user_name
@@ -45,6 +48,13 @@ class User < ActiveRecord::Base
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
       end
+    end
+  end
+
+  def fix_cell_phone
+    if !cell_phone.blank?
+      cleanup = self.cell_phone.gsub(/[ .,-]/, "")
+      self.cell_phone = cleanup
     end
   end
 

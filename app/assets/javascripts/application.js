@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require pages
+//= require jquery.tablesorter.min
+//= require tablesorter
 //= require_tree .
 //= require tether
 //= require bootstrap-sprockets
@@ -26,6 +28,7 @@ $(document).ready(function() {
 	});
 });
 
+
 $(function () {
   $('#find-out-more').popover({
     container: 'body',
@@ -36,3 +39,5 @@ $(function () {
 $('#find-out-more').hover(
 	function(){$(this).toggleClass('btn-lg')}
 );
+
+

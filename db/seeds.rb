@@ -13,11 +13,11 @@ Item.destroy_all
 
 15.times do |index|
 User.create!(
-	username: Faker::Team.creature,
-	password: Faker::Internet.password(8, 10),
+	username: Faker::Lorem.word,
+	password: "password",
  	first_name: Faker::Name.first_name, 
  	last_name: Faker::Name.last_name,
- 	cell_phone: "1234567849",
+ 	cell_phone: "217-821-3167",
  	email: Faker::Internet.email,
  	bio: Faker::Lorem.paragraph,
  	)

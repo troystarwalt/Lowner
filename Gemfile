@@ -73,3 +73,5 @@ source 'https://rails-assets.org' do
 end
 
 gem 'omniauth-facebook'
+
+gem 'twilio-ruby'
