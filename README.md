@@ -10,22 +10,21 @@ This application is currently in development.
 - [x] Loan item to another user
 - [x] Upload item
 - [x] Delete Item
-- [ ] Take back a shared item.
+- [x] Take back a shared item.
 
 ### UI/UX
 - [ ] Pop up account creation
 - [x] OmniAuth
-- [ ] Tool Tip to Explain Action
+- [x] Tool Tip to Explain Action
 - [x] Make Profile Larger
 - [x] Add Logout Link To Home
 - [x] Make LOWNER clickable
 
 ### Styling
 - [ ] Update background for app pages
-- [ ] Update flash notices/alerts
+- [x] Update flash notices/alerts
 - [ ] Fix link styling in nav bar
 - [ ] Switch up colors for app pages
-- [ ] Turn item table into cards
 - [ ] Make other tables expandable
 - [ ] Center Table Text
 
@@ -43,7 +42,7 @@ This application is currently in development.
 - [ ] Test item.rb
 
 ### Wish List
-- [ ] Twilio
+- [x] Twilio
 - [ ] AJAX response on deletes and shares
 - [ ] Mandril setup to email users (if not then just mail:to)
 - [ ] Email alert if a user has shared something with you
