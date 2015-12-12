@@ -3,6 +3,8 @@ class PagesController < ApplicationController
 
 
 	def index
+
+		@users = Users.all.count
 		if user_signed_in?
 			redirect_to profile_path(current_user)
 		else

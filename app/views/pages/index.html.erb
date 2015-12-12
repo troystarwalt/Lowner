@@ -7,16 +7,17 @@
 	<title>Lowner</title>
 	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
 <body class="home_page">
 	<div id="wrapper">
 		<% if flash[:alert] %>
-			<div class="alert alert-danger text-center" role="alert"><span class="alert"><%= alert %></span></div>
+		<div class="alert alert-danger text-center" role="alert"><span class="alert"><%= alert %></span></div>
 		<% elsif flash[:notice] %>
-			<div class="alert alert-info text-center" role="alert"><span class="notice"><%= notice %></span></div>
-			<% end %>
+		<div class="alert alert-info text-center" role="alert"><span class="notice"><%= notice %></span></div>
+		<% end %>
 		<div class="blur-bg">
 			<div class="container">
 				<h1 class="text-center logo-text"><a href="/" class="main-logo-link">LOWNER</a></h1>
@@ -42,26 +43,41 @@
 					</ul>
 				</nav>
 				<div id="hidden-block" class="learn-more center-block" display="none">
-					<p>This should be hidden
-						Stumptown meh master cleanse tote bag ethical. Raw denim austin viral 8-bit ramps, affogato bitters thundercats narwhal irony selfies keytar dreamcatcher sriracha fashion axe. Fanny pack meh hashtag ugh, migas drinking vinegar tilde humblebrag seitan locavore pabst try-hard mustache. Ramps heirloom godard typewriter bespoke 3 wolf moon, twee cray freegan vegan XOXO. Art party pour-over food truck kogi, scenester venmo tacos portland dreamcatcher squid tumblr vinyl hella tote bag sartorial. Kitsch XOXO swag scenester, selfies wayfarers put a bird on it gastropub irony listicle knausgaard quinoa art party hoodie. Meditation organic offal, kitsch messenger bag franzen squid yuccie microdosing.
+					<h3><strong>Track Your Stuff</strong></h3>
+					<p>
+						Have you ever had that friend or colleague that held on to your cat or fan too long?</p>
+						<p>
+							Well, <span class="logo-text-small">Lowner</span> has been created help you and your friend's track your stuff.
+						</p>
 
-						Before they sold out organic four dollar toast kitsch, fashion axe banh mi bicycle rights waistcoat plaid. Knausgaard VHS intelligentsia meh yr +1. Food truck meditation tote bag banjo, hoodie forage semiotics hashtag humblebrag disrupt gentrify readymade flexitarian roof party. Roof party locavore mlkshk fanny pack mixtape, viral williamsburg pop-up drinking vinegar PBR&B four loko DIY chillwave you probably haven't heard of them single-origin coffee. Vegan cold-pressed farm-to-table pickled butcher wayfarers. Vice craft beer trust fund selfies, dreamcatcher asymmetrical pop-up letterpress kitsch gentrify yr shabby chic. Chicharrones hella next level chillwave, trust fund green juice tofu kinfolk.
-					</p>
+						<p><span class="logo-text-small">Lowner</span> allows you to <span class="action-items">create, share, delete and take back</span> your items.</p>
+						<p>Go ahead and <%= link_to 'create an account', new_user_registration_path %> to get started.</p>
+					</div>
 				</div>
 			</div>
+			<div class="clearfix"></div>
+			<footer class="footer">
+				<div class="row">
+
+					<nav class="navbar navbar-fixed-bottom navbar-dark bg-inverse">
+						<ul class="nav">
+							<li><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#stats-of-lowner"><i class="fa fa-bars fa-inverse"></i> Stats</button></li>
+
+						</ul>
+						<div class="collapse" id="stats-of-lowner">
+							<div class="bg-inverse">
+							<ul class="nav nav-inline stats-list">
+									<li class="nav-item nav-item-spread">Total Users: <%= User.all.count %></li>
+									<li class="nav-item nav-item-spread">Total Items: <%= Item.all.count %></li>
+									<li class="nav-itefm">Total Lowns: <%= ItemShare.all.count %></li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</footer>
 		</div>
-		<div class="clearfix"></div>
-		<footer class="footer">
-		<div class="row">
-		<nav class="navbar navbar-fixed-bottom navbar-dark bg-inverse col-sm-1">
-		<ul class="nav navbar">
-			<li><i class="fa fa-bar">cat</i></li>
-		</ul>
-		</nav>
-		</div>
-		</footer>
-	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-</body>
-</html>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	</body>
+	</html>

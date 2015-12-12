@@ -45,6 +45,11 @@ body.home_page {
 	font-size: 5em;
 }
 
+.logo-text-small {
+	font-family: 'Lobster';
+	font-size: 2em;
+}
+
 a.main-logo-link{
 	color: #373a3c;
 }
@@ -59,6 +64,16 @@ a.main-logo-link{
 }
 
 .learn-more {
-	max-width: 500px;
+	max-width: 600px;
 }
 
+.action-items {
+	background-color: #02C39A;
+}
+
+.stats-list {
+	display: inline-flex;
+	.nav-item-spread {
+		padding-right: 30px;
+	}
+}

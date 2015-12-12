@@ -21,12 +21,12 @@ This application is currently in development.
 - [x] Make LOWNER clickable
 
 ### Styling
-- [ ] Update background for app pages
+- [x] Update background for app pages
 - [x] Update flash notices/alerts
 - [ ] Fix link styling in nav bar
-- [ ] Switch up colors for app pages
+- [x] Switch up colors for app pages
 - [x] Make other tables expandable
-- [ ] Center Table Text
+- [x] Center Table Text
 
 ### Responsive
 - [ ] Create different size images for mobile screens. (media queries)
