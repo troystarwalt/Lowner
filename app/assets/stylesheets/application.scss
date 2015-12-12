@@ -23,7 +23,8 @@ body {
 	}
 
 	.nav-bg {
-		background-image: url('woven.png');
+		background-image: url('penta_out.png');
+
 	}
 
 .site-name {
@@ -73,13 +74,13 @@ ul.nav li.active a.top-bar-nav-link {
 }
 
 .btn-info {
-	background-color: #8FC0A9;
-	border-color: #8FC0A9
+	background-color: #46494C;
+	border-color: #46494C
 }
 
 .btn-info:hover, .btn-info:active, .btn-info:visited {
-	background-color: #8FC0A9;
-	border-color: #8FC0A9
+	background-color: #46494C;
+	border-color: #46494C
 }
 
 
@@ -88,4 +89,6 @@ ul.nav li.active a.top-bar-nav-link {
 	max-width: 225px;
 }
 
-
+footer {
+	margin-top: 50px;
+}

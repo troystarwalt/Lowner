@@ -24,42 +24,16 @@ body.home_page {
 	background-color: #8FC0A9;
 
 	.blur-bg {
-		background-color: white;
-		opacity: .9;
-	-webkit-clip-path: polygon(0 0, 100% 1%, 93% 100%, 7% 100%);
-	clip-path: polygon(0 0, 100% 1%, 93% 100%, 7% 100%);
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f8f7+0,b6d0cd+68&0.56+20,0.56+20,0.72+30,0.56+47,1+97 */
+		background: -moz-linear-gradient(top,  rgba(242,248,247,0.8) 0%, rgba(224,236,235,0.7) 20%, rgba(215,230,229,0.72) 30%, rgba(200,220,218,0.73) 47%, rgba(182,208,205,0.74) 68%, rgba(182,208,205,1) 97%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  rgba(242,248,247,0.8) 0%,rgba(224,236,235,0.8) 20%,rgba(215,230,229,0.82) 30%,rgba(200,220,218,0.7) 47%,rgba(182,208,205,0.74) 68%,rgba(182,208,205,1) 97%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  rgba(242,248,247,0.8) 0%,rgba(224,236,235,0.8) 20%,rgba(215,230,229,0.82) 30%,rgba(200,220,218,0.8) 47%,rgba(182,208,205,0.74) 68%,rgba(182,208,205,1) 97%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8ff2f8f7', endColorstr='#b6d0cd',GradientType=0 ); /* IE6-9 */
+		-webkit-clip-path: polygon(0 0, 100% 1%, 93% 100%, 7% 100%);
+		clip-path: polygon(0 0, 100% 1%, 93% 100%, 7% 100%);
 		// Not super functional.
 	}
 }
-
-// .wrapper {
-// 	min-height: 100%;
-// 	// Below code set's an equal footer height
-// 	margin-bottom: -150px;
-// }
-
-// .wrapper:after {
-// 	content: "";
-// 	display: block;
-// }
-
-
-// footer, .wrapper:after {
-// 	height: 150px;
-// 	width: 100%;
-// 	text-align: center;
-
-// 	.box-around-profile {
-// 		background-color: white;
-// 		width: 125px;
-// 		// height: 25px;
-
-// 		.footer-link {
-// 			color: #222222
-// 		}
-// 	}
-// }
-
 
 .jumbotron {
 	background-color: white;
