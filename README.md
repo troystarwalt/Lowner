@@ -25,7 +25,7 @@ This application is currently in development.
 - [x] Update flash notices/alerts
 - [ ] Fix link styling in nav bar
 - [ ] Switch up colors for app pages
-- [ ] Make other tables expandable
+- [x] Make other tables expandable
 - [ ] Center Table Text
 
 ### Responsive

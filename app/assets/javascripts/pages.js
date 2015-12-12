@@ -2,7 +2,7 @@
 
 $( "#learn-more-button").click(function() {
 	$( "#hidden-block" ).slideToggle( "slow", "swing", function(){
-		$('html, body').animate({scrollTop: $(".footer").offset().top + $('window').height()
+		$('html, body').animate({scrollTop: $("#hidden-block").offset().top + $('window').height()
 	}, 3000);
 	})
 });

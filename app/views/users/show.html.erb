@@ -14,12 +14,16 @@
 		</svg>
 	</div>
 	<div class="user-info col-xs-8">
-		<p><%= @user.username %></p>
-		<p><%= @user.first_name %> <%= @user.last_name %></p>
-		<p><%= @user.bio %></p>
-		<p><%= @user.cell_phone %></p>
+		<div class="user-profile-text">
+			<h3><%= @user.username %> | <small class="text-muted"><%= @user.first_name %> <%= @user.last_name %></small>
+			</h3>
+			<hr>
+			<p><%= @user.bio %></p>
+			<hr>
+			<p><span><%= @user.cell_phone %> | <%= @user.email %></span></p>
+		</div>
 	</div>
-</div>
+</div></br>
 <div class="row">
 	<div class="search_button_area col-xs-3"><%= button_to 'Create Item to Share', new_item_path, method: :get, class: "btn" %>
 		
@@ -28,94 +32,94 @@
 </div>
 <div id="owned-item-container">
 	<div class="row">
-			<h1 class="col-xs-4"><% if @user.items.blank? %>Create Something<%else%>Your Stuff <i class="fa fa-bars" id="owned-button" style="cursor: pointer"></i></h1>
+		<h1 class="col-xs-5"><% if @user.items.blank? %>Create Something<%else%>Your Stuff <i class="fa fa-bars" id="owned-button" style="cursor: pointer"></i></h1>
 	</div>
 	<div id="owned-table-container">
-	<div class="table-responsive">
-		<table class="table table-striped table-hover" >
-			<thead class="thead-inverse">
-				<tr>
-					<th>Name</th>
-					<th>Description</th>
-					<th>Category</th>
-					<th>Image</th>
-					<th>Loaned?</th>
-					<th>Loan It</th>
-					<th>Delete</th>
-				</tr>
-			</thead>
-			<tbody>
-				<% @user.items.each do |item| %>
-				<tr>
-					<td><%= item.name %></td>
-					<td><%= item.description %> </td>
-					<td><%= item.category %></td>
-					<td><%= image_tag item.avatar.url ('thumb'), class: "img-thumbnail" %></td>
-					<td>
-						<% if @user.shared_items.where(item_id: item.id).length < 1 %>
-						Nope
-						<% else %>
-						Loaned To: <%= @user.shared_items.find_by_item_id(item.id).borrower.username %>
-						<% end %></td>
+		<div class="table-responsive">
+			<table class="table table-striped table-hover" >
+				<thead class="thead-inverse">
+					<tr>
+						<th>Name</th>
+						<th>Description</th>
+						<th>Category</th>
+						<th>Image</th>
+						<th>Loaned?</th>
+						<th>Loan It</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @user.items.each do |item| %>
+					<tr>
+						<td><%= item.name %></td>
+						<td><%= item.description %> </td>
+						<td><%= item.category %></td>
+						<td><%= image_tag item.avatar.url ('thumb'), class: "img-thumbnail" %></td>
 						<td>
 							<% if @user.shared_items.where(item_id: item.id).length < 1 %>
-							<button class="btn"><%= link_to 'Loan', new_item_share_path(item: item.id)%></button>
+							Nope
 							<% else %>
-							<%= button_to 'Take Back', item_share_path( item.find_item_share), class: "btn", method: :delete %>						
-							<% end %>
-						</td>
-						<td>
-							<%= button_to 'Delete', item,  method: :delete, remote: true, data: { confirm: "Are you sure you want to remove this item from your inventory?" }, class: "btn delete-item" %>
-						</td>
-					</tr>
-					<% end %>
+							Loaned To: <%= @user.shared_items.find_by_item_id(item.id).borrower.username %>
+							<% end %></td>
+							<td>
+								<% if @user.shared_items.where(item_id: item.id).length < 1 %>
+								<button class="btn"><%= link_to 'Loan', new_item_share_path(item: item.id)%></button>
+								<% else %>
+								<%= button_to 'Take Back', item_share_path( item.find_item_share), class: "btn", method: :delete %>						
+								<% end %>
+							</td>
+							<td>
+								<%= button_to 'Delete', item,  method: :delete, remote: true, data: { confirm: "Are you sure you want to remove this item from your inventory?" }, class: "btn delete-item" %>
+							</td>
+						</tr>
+						<% end %>
 
-			</tbody>
-		</table>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<% end %>
 	</div>
-	</div>
-	<% end %>
-</div>
-<div id="borrowed-container">
-	<% if @user.borrowed_from_user.present? %>
-	<hr>
-	<div class="row">
-			<h1 class="col-xs-4">Borrowed Stuff <i class="fa fa-bars" id="borrowed-button" style="cursor: pointer"></i></h1>
+	<div id="borrowed-container">
+		<% if @user.borrowed_from_user.present? %>
+		<hr>
+		<div class="row">
+			<h1 class="col-xs-5">Borrowed Stuff <i class="fa fa-bars" id="borrowed-button" style="cursor: pointer"></i></h1>
 		</div>		
 	</div>
 	<div id="borrowed-table-container">
-	<div class="table-responsive">
-		<table class="table table-striped table-hover">
+		<div class="table-responsive">
+			<table class="table table-striped table-hover">
 
-			<thead class="thead-inverse">
-				<tr>
-					<th>Item</th>
-					<th>Who owns it?</th>
-					<th>Their Email</th>
-				</tr>
-			</thead>
-			<tbody>
-				<% @user.borrowed_from_user.each do  |item| %>
-				<tr>
-					<td><%= item[0] %></td>
-					<td><%= item[1] %></td>
-					<td><%= mail_to item[2] %></td>
-				</tr>
-				<% end %>
-			</tbody>
+				<thead class="thead-inverse">
+					<tr>
+						<th>Item</th>
+						<th>Who owns it?</th>
+						<th>Their Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @user.borrowed_from_user.each do  |item| %>
+					<tr>
+						<td><%= item[0] %></td>
+						<td><%= item[1] %></td>
+						<td><%= mail_to item[2] %></td>
+					</tr>
+					<% end %>
+				</tbody>
 
-		</table>
-		<% end %>
+			</table>
+			<% end %>
 		</div>
-</div>
+	</div>
 
-		<% if @user.shared_items.present? %>
-		<div id="lowned-stuff-container">
-			<hr>
-			<div class="row">
-				<h1 class="col-xs-4">Lowned Stuff <i class="fa fa-bars" id="lowned-button" style="cursor: pointer"></i></h1>
-			</div>
-			<div id="lowned-stuff-table-container">
+	<% if @user.shared_items.present? %>
+	<div id="lowned-stuff-container">
+		<hr>
+		<div class="row">
+			<h1 class="col-xs-5">Lowned Stuff <i class="fa fa-bars" id="lowned-button" style="cursor: pointer"></i></h1>
+		</div>
+		<div id="lowned-stuff-table-container">
 			<div class="table-responsive">
 				<table class="table table-striped table-hover">
 
@@ -144,8 +148,8 @@
 
 					<% end %>
 				</div>
-				</div>
 			</div>
+		</div>
 
 
 

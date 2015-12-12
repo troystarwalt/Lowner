@@ -32,33 +32,33 @@ body.home_page {
 	}
 }
 
-.wrapper {
-	min-height: 100%;
-	// Below code set's an equal footer height
-	margin-bottom: -150px;
-}
+// .wrapper {
+// 	min-height: 100%;
+// 	// Below code set's an equal footer height
+// 	margin-bottom: -150px;
+// }
 
-.wrapper:after {
-	content: "";
-	display: block;
-}
+// .wrapper:after {
+// 	content: "";
+// 	display: block;
+// }
 
 
-footer, .wrapper:after {
-	height: 150px;
-	width: 100%;
-	text-align: center;
+// footer, .wrapper:after {
+// 	height: 150px;
+// 	width: 100%;
+// 	text-align: center;
 
-	.box-around-profile {
-		background-color: white;
-		width: 125px;
-		// height: 25px;
+// 	.box-around-profile {
+// 		background-color: white;
+// 		width: 125px;
+// 		// height: 25px;
 
-		.footer-link {
-			color: #222222
-		}
-	}
-}
+// 		.footer-link {
+// 			color: #222222
+// 		}
+// 	}
+// }
 
 
 .jumbotron {
@@ -84,4 +84,7 @@ a.main-logo-link{
 	display: none;
 }
 
+.learn-more {
+	max-width: 500px;
+}
 

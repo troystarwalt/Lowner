@@ -12,3 +12,15 @@
   width: 0;
   height: 0;
 }
+
+.user-info {
+	background-color: rgba(200, 213, 185, 0.6);
+	max-width: 800px;
+
+	.user-profile-text {
+
+		h3, p {
+			opacity: 1;
+		}
+	}
+}
