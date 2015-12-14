@@ -19,10 +19,7 @@ class ItemSharesController < ApplicationController
 
   def destroy
 
-    # item = current_user.shared_items.find()
-
     itemshare = ItemShare.where(id: params[:id]).first
-    # byebug
     if itemshare.blank?
       flash[:alert] = "Not able to take back."
       redirect_to profile_path(current_user)

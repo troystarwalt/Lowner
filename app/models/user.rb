@@ -1,10 +1,12 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  # :confirmable, :lockable, :timeoutable
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
-  validates :username, uniqueness: true
+  validates :username, uniqueness: true, length: { in: 6..20 }
+
+  validates :bio, length: { maximum: 400 }
 
   has_attached_file :avatar, styles: { medium: "300x300>", small: "200x200>", thumb: "100x100>" }, default_url: "https://robohash.org/nycda.png?size=200x200"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/

@@ -1,8 +1,11 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Edit <%= current_user.username %>'s Profile</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
   <%= devise_error_messages! %>
-
+  <div  class= "pull-right">
+<p>Current avatar:</p> <%= image_tag current_user.avatar.url(:medium), class: "img-responsive" %>
+</div>
+<div id="form-group">
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -20,8 +23,8 @@
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :cell_phone %><br />
-    <%= f.text_field :cell_phone %>
+    <%= f.label :cell_phone %><i> (We'll need this if you want to be sent reminders.)</i><br />
+    <%= f.text_field :cell_phone, placeholder: "555-555-5555" %>
   </div>
   <div class="field">
     <%= f.label :bio %><br />
@@ -51,14 +54,18 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 <% end %>
-
+<br />
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
 <% end %>
-
+<%= link_to "Back", :back, class: "back-button" %>
+</div>
+<hr>
+<div class="pull-right">
 <h3>Delete My Account</h3>
 
 <p>Tired of sharing with your friends? <%= button_to "Recycle My Account", registration_path(resource_name), data: { confirm: "Are you sure you won't be needing any of your stuff back?" }, method: :delete %></p>
+</div>
 
-<%= link_to "Back", :back %>
+

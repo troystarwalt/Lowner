@@ -60,7 +60,7 @@
 							<% if @user.shared_items.where(item_id: item.id).length < 1 %>
 							Nope
 							<% else %>
-							Loaned To: <%= @user.shared_items.find_by_item_id(item.id).borrower.username %>
+							Lowned To: <%= @user.shared_items.find_by_item_id(item.id).borrower.username %>
 							<% end %></td>
 							<td>
 								<% if @user.shared_items.where(item_id: item.id).length < 1 %>

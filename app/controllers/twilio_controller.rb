@@ -10,8 +10,8 @@ class TwilioController < ApplicationController
 
 
 	def create
-		account_sid = ENV['TWILIO_TEST_API_ACCOUNTSID']
-		auth_token = ENV['TWILIO_TEST_AUTHTOKEN']
+		account_sid = ENV['TWILIO_API_ACCOUNTSID']
+		auth_token = ENV['TWILIO_AUTHTOKEN']
 
 
 
@@ -19,11 +19,10 @@ class TwilioController < ApplicationController
 			
 			@client = Twilio::REST::Client.new account_sid, auth_token
 
-			from = "+15005550006"
+			from = ENV['TWILIO_PHONE_NUMBER']
 			body = "Just a quick reminder that you still have my crap. With Love: #{current_user.username}"
 
 			@to = "+1" + params[:phone]
-			byebug
 			@to.gsub(/[ .,-]/, "")
 
 			message = @client.account.messages.create(

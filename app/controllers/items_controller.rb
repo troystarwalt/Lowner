@@ -25,27 +25,27 @@ class ItemsController < ApplicationController
        @errors = @newUserItem.errors.messages
        flash[:alert] = "Sorry, the item that you tried to upload was not valid." + @errors.to_s
        redirect_to profile_path(@user)  
-     end
+      end
    else
     flash[:alert] = "You'll need to have an account or login to create an item."
     redirect_to new_user_session_path
+    end
   end
-end
 
-def edit
-end
+  def edit
+  end
 
-def update
-end
+  def update
+  end
 
-def destroy
-  @user = current_user
-  @item.destroy
+  def destroy
+    @user = current_user
+    @item.destroy
     respond_to do |format|
       format.html { redirect_to root_path, notice: 'Item was successfully destroyed.' }
       format.json { render nothing: true}
     end
-end
+  end
 
 
 private
