@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <li class= "nav-item">
+  <li class= "nav-item ">
   <%= link_to(current_user.email, profile_path(current_user), class: "nav-link top-bar-nav-link nav-profile-font-size") %>        
   </li>
  <% end %>

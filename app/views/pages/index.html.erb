@@ -59,17 +59,14 @@
 			<footer class="footer">
 				<div class="row">
 
-					<nav class="navbar navbar-fixed-bottom navbar-dark bg-inverse">
-						<ul class="nav">
-							<li><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#stats-of-lowner"><i class="fa fa-bars fa-inverse"></i> Stats</button></li>
+					<nav class="navbar navbar-fixed-bottom navbar-dark bg-inverse col-sm-2 navbar-color" id="navbar-change">
+						<button class="navbar-toggler center-block" id="navbar-expander" type="button" data-toggle="collapse" data-target="#stats-of-lowner"><i class="fa fa-bars fa-inverse"></i> Stats</button>
 
-						</ul>
 						<div class="collapse" id="stats-of-lowner">
-							<div class="bg-inverse">
-							<ul class="nav nav-inline stats-list">
+								<ul class="nav nav-inline stats-list">
 									<li class="nav-item nav-item-spread">Total Users: <%= User.all.count %></li>
 									<li class="nav-item nav-item-spread">Total Items: <%= Item.all.count %></li>
-									<li class="nav-itefm">Total Lowns: <%= ItemShare.all.count %></li>
+									<li class="nav-item">Total Lowns: <%= ItemShare.all.count %></li>
 								</ul>
 							</div>
 						</div>

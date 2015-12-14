@@ -11,7 +11,7 @@ html, body {
 }
 
 body.home_page {
-	background: url('/lots_of_books.jpeg');
+	background: url('/lots_of_books_smaller.jpeg');
 
 	background-position: center center;
 
@@ -73,7 +73,18 @@ a.main-logo-link{
 
 .stats-list {
 	display: inline-flex;
+	// background-color: rgba(2, 195, 154, 0.5);
 	.nav-item-spread {
 		padding-right: 30px;
 	}
+}
+
+.navbar-color {
+	background-color: rgba(2, 195, 154, 0.1);
+	border: 2px white solid;
+}
+
+.navbar-color-darker {
+	background-color: rgba(2, 195, 154, 0.5);
+	border: 2px white solid;
 }

@@ -36,8 +36,14 @@ $(function () {
   })
 })
 
-$('#find-out-more').hover(
-	function(){$(this).toggleClass('btn-lg')}
-);
+$('#show-hide-about').click(function(){
+	$('#popup-about-page').show("fast", function() {
+	});
+});
 
+$('#close-about').click(function(){
+	$('#popup-about-page').hide("fast", function(){
+
+	});
+});
 

@@ -23,5 +23,7 @@ $( "#owned-button").click(function() {
 });
 
 
-
+$( "#navbar-expander").click(function(){
+	$( "#navbar-change").toggleClass('col-sm-8 navbar-color-darker');
+});
 
