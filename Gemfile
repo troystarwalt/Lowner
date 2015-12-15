@@ -66,6 +66,8 @@ gem 'pry-rails'
 
 gem 'paperclip', '~>4.2'
 
+gem 'aws-sdk'
+
 gem 'bootstrap', '~> 4.0.0.alpha1'
 
 source 'https://rails-assets.org' do
