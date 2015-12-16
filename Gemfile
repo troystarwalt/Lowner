@@ -69,7 +69,7 @@ gem 'paperclip', '~>4.2'
 
 gem 'aws-sdk', '< 2.0'
 
-gem 'bootstrap', '~> 4.0.0.alpha1'
+gem 'bootstrap', '4.0.0.alpha1'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'

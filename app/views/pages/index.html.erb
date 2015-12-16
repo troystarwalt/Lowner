@@ -12,7 +12,7 @@
 	<%= csrf_meta_tags %>
 </head>
 <body class="home_page">
-	<div id="wrapper">
+	<div id="wrapper text-center">
 		<% if flash[:alert] %>
 		<div class="alert alert-danger text-center" role="alert"><span class="alert"><%= alert %></span></div>
 		<% elsif flash[:notice] %>
@@ -20,9 +20,10 @@
 		<% end %>
 		<div class="blur-bg">
 			<div class="container">
-				<h1 class="text-center logo-text"><a href="/" class="main-logo-link">LOWNER</a></h1>
+			<div class="text-center">
+				<h1 class=" logo-text"><a href="/" class="main-logo-link">LOWNER</a></h1>
 				<nav class="nav navbar">
-					<ul class=" nav navbar nav-pills text-center">
+					<ul class=" nav navbar nav-pills">
 						<li class="nav-link">
 							<% if user_signed_in? %>
 							<%= link_to "Your Profile", profile_path(current_user), class: 'menuButton' %>
@@ -42,6 +43,7 @@
 						</li>
 					</ul>
 				</nav>
+			</div>
 				<div id="hidden-block" class="learn-more center-block" display="none">
 					<h3><strong>Track Your Stuff</strong></h3>
 					<p>
