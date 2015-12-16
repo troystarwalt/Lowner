@@ -8,5 +8,6 @@ class PagessController < ApplicationController
 			redirect_to profile_path(current_user)
 		else
 			render root_path
+		end
 	end
 end
