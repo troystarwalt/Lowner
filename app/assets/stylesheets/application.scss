@@ -24,7 +24,7 @@ body {
 	}
 
 	.nav-bg {
-		background-image: url('penta_out.png');
+		background-image: image-url('penta_out.png');
 
 	}
 
@@ -111,7 +111,7 @@ display: inline;
   max-height: 50%;
   max-width: 50%;
   z-index: 100000;
-  background-image: url('penta_out.png');
+  background-image: image-url('penta_out.png');
   color: #5BCAFF;
   padding: 20px;
 
