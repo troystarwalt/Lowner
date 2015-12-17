@@ -26,14 +26,3 @@ class ItemShare < ActiveRecord::Base
 	end
 
 end
-
-
-# User.find(40).shared_items
-
-# Working Method But Not Clean:
-# ==============================
-# ItemShare.where(user_id: 39).each do |item|
-# 	puts Item.find(item.item_id).user.username
-# end
-
-# Item.joins(:shared_users).where(:item_shares => {user_id: 40}, :users => {id: 40})

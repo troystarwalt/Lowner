@@ -2,6 +2,8 @@
 
 <h2>Who do you want to share this with?</h2>
 
+<!-- Allow users to search through other users. -->
+
 <div class='form-group'>
 	<%= form_tag new_item_share_path, :method => 'get', id: 'users_search' do %>
 	<div class="row">
@@ -16,16 +18,19 @@
 	</div>
 </div>
 <% end %>
+<!-- Show list of users to share items. -->
+
+
 <div class="card-columns">
 	<div class="row">
 		<%  @users.each do |user| %>
-		<div class="col-sm-4 col-md-3 ">
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
 			<div class="card card-custom-width box-shadow--3dp">
 
 				<%= image_tag user.avatar, class: 'card-img-top card-img-users-share center-block' %>
 				<div class="card-block">
 					<h4 class="card-title"><%= user.username %></h4>
-					<p class="card-subtitle text-muted"><%= user.email%></p>
+					<p class="card-subtitle card-text text-muted"><%= user.email%></p>
 
 					<%= link_to "Loan It", item_shares_path(:user_id => user.id, :item_id => @item_id), :method => :post, class: "btn btn-primary" %>
 				</div>	

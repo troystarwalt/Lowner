@@ -18,7 +18,6 @@ Rails.application.routes.draw do
 
   post 'twilio/send' => 'twilio#create'
 
-  
 
   # resources :pages
 
