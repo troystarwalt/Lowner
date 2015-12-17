@@ -30,15 +30,16 @@ class TwilioController < ApplicationController
 				:to => @to,
 				:body => body   
 				)   
-			puts body
-
 			redirect_to profile_path(current_user.id), notice: "Message Sent!"
 			end
 
 			rescue Twilio::REST::RequestError => e
 			puts e.message
 
+		redirect_to profile_path(current_user.id), alert: "Message not sent."
 		end
+
+
 end
 
 
