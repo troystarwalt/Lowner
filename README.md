@@ -23,17 +23,17 @@ This application is currently in development.
 ### Styling
 - [x] Update background for app pages
 - [x] Update flash notices/alerts
-- [ ] Fix link styling in nav bar
+- [x] Fix link styling in nav bar
 - [x] Switch up colors for app pages
 - [x] Make other tables expandable
 - [x] Center Table Text
 
 ### Responsive
-- [ ] Create different size images for mobile screens. (media queries)
+- [x] Create different size images for mobile screens. (media queries)
 
 ### Protection
 - [x] Devise authenticate
-- [ ] Devise mailer to reset password
+- [x] Devise mailer to reset password
 - [x] Only currrent user can go to their own profile. No public profiles.
 
 ### Testing
@@ -43,7 +43,7 @@ This application is currently in development.
 
 ### Wish List
 - [x] Twilio
-- [ ] AJAX response on deletes and shares
+- [x] AJAX response on deletes and shares
 - [ ] Mandril setup to email users (if not then just mail:to)
 - [ ] Email alert if a user has shared something with you
 
