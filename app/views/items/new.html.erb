@@ -13,26 +13,40 @@
 	<div class="form-group row">
 		<%= f.label :category, class: "sr-only"  %>
 		<div class="col-sm-12">
-			<%= f.select :category, options_for_select([['Book'], ['Music'], ['Money'], ['Bike'], ['Misc'], ['Appliance'], ['Clothes'], ['Jewelry'], ['Electronic'], ['Vice']]), {include_blank: 'Select a Category'}, {class: 'form-control'} %>
+			<%= f.select :category, options_for_select([
+				['Appliance'], 
+				['Bike'], 
+				['Book'], 
+				['Clothes'], 
+				['Electronics'], 
+				['Jewelry'], 
+				['Misc.'], 
+				['Money'], 
+				['Music'], 
+				['Vice']
+				]), {include_blank: 'Select a Category for the Item'}, {class: 'form-control'} %>
 		</div>
 	</div>
 	<div class="form-group row">
 		<%= f.label :description, class: "sr-only"  %>
 		<div class="col-sm-12">
-			<%= f.text_area :description, class: "form-control", placeholder: "Brief Description" %>
+			<%= f.text_area :description, class: "form-control", placeholder: "Brief Description of the Item" %>
 		</div>
 	</div>
 	<label class="file">
 		<div class="row">
-			<%= f.file_field :avatar, class: "col-sm-8 form-control-file", id: "file"%>
+			<%= f.file_field :avatar, class: "col-sm-12 form-control-file", id: "file"%>
 
 			<span class="file-custom"></span>
 		</div>
 	</label>
+		<div class="form-group row">
+			<p class="col-sm-12"><i>Upload an image or other file to represent the item.</i></p>
+		</div>
 	<div class="form-group row">
 		<%= f.submit "Create New Item", class: "btn btn-secondary col-sm-6 col-sm-offset-3 send-item" %>
 		<div class="col-sm-3">
-		<button type="button" class= "btn btn-info" id="find-out-more" data-toggle="popover" title="What does this do?" data-placement="right" data-content="After you create the item, you can loan it to a friend."><i class="fa fa-question-circle"></i></button>
+			<button type="button" class= "btn btn-info" id="find-out-more" data-toggle="popover" title="What does this do?" data-placement="right" data-content="After you create the item, you can loan it to a friend."><i class="fa fa-question-circle"></i></button>
 		</div>
 	</div>
 	<% end %>
