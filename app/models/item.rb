@@ -34,15 +34,3 @@ class Item < ActiveRecord::Base
   end  
 
 end
-
-
-# Categories
-# Book
-# Music
-# Money
-# Bike
-# Misc
-# Appliance
-# Clothes
-# Jewelry
-# Electronic

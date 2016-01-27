@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
       end
     end
   end
-
+# Fix phone format.
   def fix_cell_phone
     if !cell_phone.blank?
       cleanup = self.cell_phone.gsub(/[ .,-]/, "")
