@@ -2,110 +2,112 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-* {
-	margin: 0;
-}
 
-html, body {
-	height: 100%;
-}
 
-/* Background Image styles ----------------------------*/
+// * {
+// 	margin: 0;
+// }
 
-body.home_page {
-	background: url('/lots_of_books_smaller.jpeg');
+// html, body {
+// 	height: 100%;
+// }
 
-	background-position: center center;
+// /* Background Image styles ----------------------------*/
 
-	background-repeat: no-repeat;
+// body.home_page {
+// 	background: url('/lots_of_books_smaller.jpeg');
 
-	background-attachment: fixed;
+// 	background-position: center center;
 
-	background-size: cover;
+// 	background-repeat: no-repeat;
 
-	background-color: #8FC0A9;
+// 	background-attachment: fixed;
 
-	.blur-bg {
-		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f8f7+0,b6d0cd+68&0.56+20,0.56+20,0.72+30,0.56+47,1+97 */
-		background: -moz-linear-gradient(top,  rgba(242,248,247,0.8) 0%, rgba(224,236,235,0.7) 20%, rgba(215,230,229,0.72) 30%, rgba(200,220,218,0.73) 47%, rgba(182,208,205,0.74) 68%, rgba(182,208,205,1) 97%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(top,  rgba(242,248,247,0.8) 0%,rgba(224,236,235,0.8) 20%,rgba(215,230,229,0.82) 30%,rgba(200,220,218,0.7) 47%,rgba(182,208,205,0.74) 68%,rgba(182,208,205,1) 97%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to bottom,  rgba(242,248,247,0.8) 0%,rgba(224,236,235,0.8) 20%,rgba(215,230,229,0.82) 30%,rgba(200,220,218,0.8) 47%,rgba(182,208,205,0.74) 68%,rgba(182,208,205,1) 97%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8ff2f8f7', endColorstr='#b6d0cd',GradientType=0 ); /* IE6-9 */
-		-webkit-clip-path: polygon(0 0, 100% 1%, 93% 100%, 7% 100%);
-		clip-path: polygon(0 0, 100% 1%, 93% 100%, 7% 100%);
-		// Not super functional.
-	}
-}
+// 	background-size: cover;
 
-/* Text styles for front page.-------------------------*/
+// 	background-color: #8FC0A9;
 
-.logo-text {
-	font-family: 'Lobster';
-	font-size: 5em;
-}
+// 	.blur-bg {
+// 		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f8f7+0,b6d0cd+68&0.56+20,0.56+20,0.72+30,0.56+47,1+97 */
+// 		background: -moz-linear-gradient(top,  rgba(242,248,247,0.8) 0%, rgba(224,236,235,0.7) 20%, rgba(215,230,229,0.72) 30%, rgba(200,220,218,0.73) 47%, rgba(182,208,205,0.74) 68%, rgba(182,208,205,1) 97%); /* FF3.6-15 */
+// 		background: -webkit-linear-gradient(top,  rgba(242,248,247,0.8) 0%,rgba(224,236,235,0.8) 20%,rgba(215,230,229,0.82) 30%,rgba(200,220,218,0.7) 47%,rgba(182,208,205,0.74) 68%,rgba(182,208,205,1) 97%); /* Chrome10-25,Safari5.1-6 */
+// 		background: linear-gradient(to bottom,  rgba(242,248,247,0.8) 0%,rgba(224,236,235,0.8) 20%,rgba(215,230,229,0.82) 30%,rgba(200,220,218,0.8) 47%,rgba(182,208,205,0.74) 68%,rgba(182,208,205,1) 97%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+// 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8ff2f8f7', endColorstr='#b6d0cd',GradientType=0 ); /* IE6-9 */
+// 		-webkit-clip-path: polygon(0 0, 100% 1%, 93% 100%, 7% 100%);
+// 		clip-path: polygon(0 0, 100% 1%, 93% 100%, 7% 100%);
+// 		// Not super functional.
+// 	}
+// }
 
-.logo-text-small {
-	font-family: 'Lobster';
-	font-size: 2em;
-}
+// /* Text styles for front page.-------------------------*/
 
-a.main-logo-link{
-	color: #373a3c;
-}
+// .logo-text {
+// 	font-family: 'Lobster';
+// 	font-size: 5em;
+// }
 
-a.main-logo-link:hover {
-	text-decoration: none;
-	-webkit-box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
-	box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
-}
+// .logo-text-small {
+// 	font-family: 'Lobster';
+// 	font-size: 2em;
+// }
 
-.menuButton {
-	font-size: 1.5em;
-	font-color: #4A7C59;
-	border: .01em solid grey;
-	padding: .1em 1em .1em 1em;
-	background-color: rgba(2, 195, 154, 0.5);
-	border-radius: 2px;
-	-webkit-box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
-	box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
-}
+// a.main-logo-link{
+// 	color: #373a3c;
+// }
 
-a.menuButton:hover {
-	text-decoration: none;
-}
+// a.main-logo-link:hover {
+// 	text-decoration: none;
+// 	-webkit-box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
+// 	-moz-box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
+// 	box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
+// }
 
-/* Learn More Section -------------------------*/
+// .menuButton {
+// 	font-size: 1.5em;
+// 	font-color: #4A7C59;
+// 	border: .01em solid grey;
+// 	padding: .1em 1em .1em 1em;
+// 	background-color: rgba(2, 195, 154, 0.5);
+// 	border-radius: 2px;
+// 	-webkit-box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
+// 	-moz-box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
+// 	box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
+// }
 
-#hidden-block {
-	display: none;
-}
+// a.menuButton:hover {
+// 	text-decoration: none;
+// }
 
-.learn-more {
-	max-width: 600px;
-}
+// /* Learn More Section -------------------------*/
 
-.action-items {
-	background-color: #02C39A;
-}
+// #hidden-block {
+// 	display: none;
+// }
 
-/* Stats Area ----------------------------------*/
+// .learn-more {
+// 	max-width: 600px;
+// }
 
-.stats-list {
-	display: inline-flex;
-	// background-color: rgba(2, 195, 154, 0.5);
-	.nav-item-spread {
-		padding-right: 30px;
-	}
-}
+// .action-items {
+// 	background-color: #02C39A;
+// }
 
-.navbar-color {
-	background-color: rgba(2, 195, 154, 0.1);
-	border: 2px white solid;
-}
+// /* Stats Area ----------------------------------*/
 
-.navbar-color-darker {
-	background-color: rgba(2, 195, 154, 0.5);
-	border: 2px white solid;
-}
+// .stats-list {
+// 	display: inline-flex;
+// 	// background-color: rgba(2, 195, 154, 0.5);
+// 	.nav-item-spread {
+// 		padding-right: 30px;
+// 	}
+// }
+
+// .navbar-color {
+// 	background-color: rgba(2, 195, 154, 0.1);
+// 	border: 2px white solid;
+// }
+
+// .navbar-color-darker {
+// 	background-color: rgba(2, 195, 154, 0.5);
+// 	border: 2px white solid;
+// }

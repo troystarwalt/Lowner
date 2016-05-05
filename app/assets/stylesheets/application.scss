@@ -13,6 +13,10 @@
 	}
 }
 
+.boom {
+	font-family: arial;
+}
+
 body {
 	font-family: 'Inconsolata';
 	padding-top: 70px;
@@ -89,6 +93,12 @@ ul.nav li.active a.top-bar-nav-link {
 	max-width: 225px;
 }
 
+.login_item {
+	margin-left: 5px;
+}
+
+
+// Footer Links
 footer {
 	height: 50px;
 }
