@@ -10,6 +10,8 @@ html, body {
 	height: 100%;
 }
 
+/* Background Image styles ----------------------------*/
+
 body.home_page {
 	background: url('/lots_of_books_smaller.jpeg');
 
@@ -35,10 +37,7 @@ body.home_page {
 	}
 }
 
-.jumbotron {
-	background-color: white;
-	opacity: 1;
-}
+/* Text styles for front page.-------------------------*/
 
 .logo-text {
 	font-family: 'Lobster';
@@ -54,10 +53,30 @@ a.main-logo-link{
 	color: #373a3c;
 }
 
+a.main-logo-link:hover {
+	text-decoration: none;
+	-webkit-box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
+}
+
 .menuButton {
 	font-size: 1.5em;
 	font-color: #4A7C59;
+	border: .01em solid grey;
+	padding: .1em 1em .1em 1em;
+	background-color: rgba(2, 195, 154, 0.5);
+	border-radius: 2px;
+	-webkit-box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 9px -9px rgba(0,0,0,0.75);
 }
+
+a.menuButton:hover {
+	text-decoration: none;
+}
+
+/* Learn More Section -------------------------*/
 
 #hidden-block {
 	display: none;
@@ -70,6 +89,8 @@ a.main-logo-link{
 .action-items {
 	background-color: #02C39A;
 }
+
+/* Stats Area ----------------------------------*/
 
 .stats-list {
 	display: inline-flex;

@@ -6,10 +6,10 @@
 @import 'pages';
 @import "profile-link";
 
+
 @-moz-document url-prefix() {
 	fieldset {
 		display: table-cell;
-
 	}
 }
 
@@ -25,7 +25,6 @@ body {
 
 	.nav-bg {
 		background-image: image-url('penta_out.png');
-
 	}
 
 .site-name {
