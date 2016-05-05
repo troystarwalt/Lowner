@@ -1,14 +1,6 @@
-# class PagesController < ApplicationController
-# 	# include HighVoltage::StaticPage
+class PagesController < ApplicationController
 
-
-# 	def index
-# 		# @users = Users.all.count
-# 		# if user_signed_in?
-# 		# 	redirect_to profile_path(current_user)
-# 		# else
-# 		# 	render root_path
-# 		# end
-# 		puts "fuck it"
-# 	end
-# end
+	def index
+		puts "fuck"
+	end
+end
